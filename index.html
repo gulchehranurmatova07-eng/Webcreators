@@ -924,6 +924,10 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--header-h) + 8px)}
               <textarea id="f-msg" name="message" rows="4" data-i18n-ph="contact.msgPh"></textarea>
             </div>
           </div>
+          <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
           <div class="form-foot">
             <button class="btn btn-primary btn-lg btn-block" type="submit" id="f-submit">
               <span data-i18n="contact.submit">Send request</span>
@@ -1015,12 +1019,14 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--header-h) + 8px)}
 <script>
 /* =====================================================================
    SETTINGS — edit these to change contacts or connect the form.
-   formEndpoint: leave empty and the form hands the request over to
-   Telegram (pre-filled message to @Webcreators10). Paste a Formspree /
-   Getform / your own endpoint URL to receive requests by e-mail instead.
+   formEndpoint: where the quote form saves orders. "/api/orders" stores
+   them in the database so they appear in the admin panel at /admin.
+   If the database isn't set up yet (or is unreachable), the form falls
+   back to Telegram (pre-filled message to @Webcreators10), so no request
+   is ever lost. Leave it empty to always use Telegram.
    ===================================================================== */
 const CONFIG = {
-  formEndpoint: "",
+  formEndpoint: "/api/orders",
   telegramDM: "Webcreators10"
 };
 
@@ -2008,6 +2014,13 @@ const I18N = {
         message: $("#f-msg").value.trim() || "—",
         language: LANGS[lang].label
       };
+      const payload = Object.assign({}, data, {
+        businessKey: bizSel.value,
+        budgetKey: budSel.value,
+        langCode: lang,
+        page: location.pathname + location.search,
+        company: $("#f-company").value
+      });
       if (CONFIG.formEndpoint) {
         const label = btn.innerHTML;
         btn.disabled = true;
@@ -2016,22 +2029,29 @@ const I18N = {
           const res = await fetch(CONFIG.formEndpoint, {
             method: "POST",
             headers: { "Content-Type": "application/json", Accept: "application/json" },
-            body: JSON.stringify(data)
+            body: JSON.stringify(payload)
           });
-          if (!res.ok) throw new Error("HTTP " + res.status);
-          formResultState = { kind: "ok" };
-          renderResult();
-          $("#form-result h3").focus();
+          if (res.ok) {
+            formResultState = { kind: "ok" };
+            renderResult();
+            $("#form-result h3").focus();
+            return;
+          }
+          // The visitor needs to fix something or wait: show the error.
+          if (res.status === 400 || res.status === 429) {
+            alertBox.textContent = t("contact.err.send");
+            alertBox.classList.add("show");
+            return;
+          }
+          // Database not set up or down: fall through to Telegram so the lead isn't lost.
         } catch (err) {
-          alertBox.textContent = t("contact.err.send");
-          alertBox.classList.add("show");
+          // Network problem: fall through to Telegram.
         } finally {
           btn.disabled = false;
           btn.innerHTML = label;
         }
-        return;
       }
-      // No endpoint configured: hand the request to Telegram with a pre-filled message.
+      // No endpoint, or saving failed: hand the request to Telegram with a pre-filled message.
       const L = (k) => t("contact." + k);
       const text = [
         L("tgHeader"),

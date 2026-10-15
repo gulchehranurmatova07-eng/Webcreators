@@ -27,3 +27,25 @@ When `CONFIG.formEndpoint` is empty, submitting the form opens Telegram with a p
 ## Before going live
 
 Once you have a domain, change `og:image` / `twitter:image` in `<head>` to an absolute URL (for example `https://your-domain/assets/logo.jpg`). Many social networks need an absolute URL to show the preview image.
+
+## Admin panel (`/admin`)
+
+Orders sent from the quote form are saved to a database and shown at `https://your-domain/admin`, behind a password. The panel has live stats, a 30-day chart, a searchable order list, a drag-and-drop status board, notes, agreed prices and CSV export, in English, Russian and Uzbek.
+
+How it works: the form posts to `/api/orders` (Vercel serverless functions in `/api`). If the database isn't set up yet, the form falls back to Telegram, so no request is lost.
+
+### One-time setup in Vercel
+
+1. **Database:** Vercel → your project → **Storage** → **Create Database** → **Upstash for Redis** (free plan) → connect it to this project. This adds `KV_REST_API_URL` and `KV_REST_API_TOKEN` automatically.
+2. **Password:** Vercel → **Settings → Environment Variables** → add `ADMIN_PASSWORD` with a long password only you know.
+3. **Redeploy:** Deployments → ⋯ on the latest one → **Redeploy**.
+4. Optional, Telegram alert for every new order: add `TELEGRAM_BOT_TOKEN` (create a bot with @BotFather) and `TELEGRAM_CHAT_ID` (your chat ID, e.g. from @userinfobot), then redeploy.
+
+| File | What it does |
+| --- | --- |
+| `admin/index.html` | The admin panel |
+| `api/orders.js` | Save a new order (public) / list orders (admin) |
+| `api/order.js` | Update status, price, notes / delete (admin) |
+| `api/auth.js` | Log in / log out |
+| `api/_lib.js` | Shared helpers (database, sessions, rate limits) |
+| `vercel.json` | Keeps `/admin` and `/api` out of Google and blocks framing |
