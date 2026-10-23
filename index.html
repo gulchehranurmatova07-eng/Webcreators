@@ -608,6 +608,233 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--header-h) + 8px)}
 .fab:hover .fab-tip,.fab:focus-visible .fab-tip{opacity:1;transform:none}
 @keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
 
+/* ================= E-COMMERCE & DELIVERY PLATFORMS ================= */
+.com{
+  --navy:#07111F;--ink:#05070B;--eblue:#1E6BFF;--bgray:#A7B5C8;
+  overflow:hidden;isolation:isolate;
+  background:linear-gradient(180deg,var(--bg) 0%,var(--navy) 9%,var(--navy) 91%,var(--bg) 100%);
+}
+.com-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.com-glow{position:absolute;border-radius:50%;filter:blur(110px)}
+.com-glow.c1{width:640px;height:640px;right:-200px;top:40px;background:radial-gradient(circle,rgba(30,107,255,.55),transparent 70%);opacity:.6}
+.com-glow.c2{width:520px;height:520px;left:-220px;top:42%;background:radial-gradient(circle,rgba(30,107,255,.35),transparent 70%);opacity:.5}
+.com-grid{position:absolute;inset:0 0 auto;height:900px;background-image:linear-gradient(rgba(98,164,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(98,164,255,.06) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 70% 20%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse 70% 60% at 70% 20%,#000 10%,transparent 70%)}
+.com .section-pitch{color:var(--bgray)}
+.com-block{margin-top:120px}
+@media (max-width:899px){.com-block{margin-top:88px}}
+
+/* A. hero */
+.com-hero{display:grid;gap:56px;align-items:center}
+@media (min-width:1000px){.com-hero{grid-template-columns:1fr 1.05fr;gap:48px}}
+.com-hero>*{min-width:0}
+.com-title{font-size:clamp(34px,5.6vw,64px);font-weight:800;letter-spacing:-.03em;margin:20px 0 20px;line-height:1.06}
+.com-lead{font-size:clamp(16px,1.6vw,19px);color:var(--bgray);max-width:560px}
+.com-visual{position:relative;width:100%;max-width:620px;margin:0 auto;aspect-ratio:620/500}
+.cv-dash{position:absolute;left:0;top:6%;width:86%;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#0E1830,#08101F);border:1px solid rgba(130,165,255,.22);box-shadow:0 40px 90px -30px rgba(0,0,0,.95),0 0 80px -20px rgba(30,107,255,.45);animation:floatA 8s ease-in-out infinite}
+.cv-bar{display:flex;align-items:center;gap:5px;height:28px;padding:0 10px;background:rgba(0,0,0,.35);border-bottom:1px solid rgba(255,255,255,.06)}
+.cv-bar i{width:7px;height:7px;border-radius:50%}
+.cv-bar i:nth-child(1){background:#FF5F57}.cv-bar i:nth-child(2){background:#FEBC2E}.cv-bar i:nth-child(3){background:#28C840}
+.cv-bar span{flex:1;margin-left:8px;font-size:10px;color:rgba(232,236,244,.55);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv-bar em,.shop-brand em{font-style:normal;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:99px;color:var(--gold-2);border:1px solid rgba(226,190,99,.45);background:rgba(226,190,99,.08)}
+.cv-body{display:flex;min-height:0}
+.cv-side{width:15%;padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:10px;border-right:1px solid rgba(255,255,255,.05)}
+.cv-side b{width:20px;height:20px;border-radius:7px;background:linear-gradient(135deg,#4B94FF,var(--eblue));margin-bottom:6px}
+.cv-side span{width:42%;height:6px;border-radius:3px;background:rgba(255,255,255,.12)}
+.cv-side span.on{background:var(--blue-2)}
+.cv-main{flex:1;padding:12px;display:grid;gap:10px;min-width:0}
+.cv-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cv-kpis div{padding:8px 9px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);min-width:0}
+.cv-kpis small,.cv-chart small{display:block;font-size:clamp(7px,1vw,10px);color:var(--bgray);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv-kpis strong{display:block;font-family:var(--ff-head);font-size:clamp(12px,1.9vw,19px);line-height:1.2;color:#fff}
+.cv-kpis s{text-decoration:none;font-size:clamp(7px,.9vw,9px);font-weight:600;color:var(--dim)}
+.cv-kpis s.up{color:var(--ok)}
+.cv-chart{padding:9px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.cv-bars{display:flex;align-items:flex-end;gap:6%;height:clamp(54px,9vw,96px);margin-top:8px}
+.cv-bars i{flex:1;height:calc(var(--v) * 100%);border-radius:4px 4px 2px 2px;background:linear-gradient(180deg,#62A4FF,rgba(30,107,255,.25));transform-origin:bottom;transform:scaleY(.08);transition:transform 1.2s var(--ease)}
+.cv-bars i:last-child{background:linear-gradient(180deg,#9CC6FF,var(--eblue));box-shadow:0 0 14px rgba(30,107,255,.6)}
+.in .cv-bars i{transform:none}
+.cv-bars i:nth-child(2){transition-delay:.06s}.cv-bars i:nth-child(3){transition-delay:.12s}.cv-bars i:nth-child(4){transition-delay:.18s}.cv-bars i:nth-child(5){transition-delay:.24s}.cv-bars i:nth-child(6){transition-delay:.3s}.cv-bars i:nth-child(7){transition-delay:.36s}
+.cv-rows{display:grid;gap:6px}
+.cv-rows i{display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.08)}
+.cv-rows i:nth-child(2){width:78%}.cv-rows i:nth-child(3){width:56%}
+.cv-card{position:absolute;padding:12px 14px;border-radius:16px;background:rgba(12,20,40,.88);border:1px solid var(--line-2);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 24px 50px -16px rgba(0,0,0,.9);font-size:clamp(10px,1.3vw,13px)}
+.cv-product{right:0;top:0;display:flex;align-items:center;gap:10px;width:46%;animation:floatB 6s ease-in-out infinite}
+.cv-product b{display:block;font-weight:600;line-height:1.25;color:#fff}
+.cv-product span{color:var(--blue-2);font-family:var(--ff-head);font-weight:700}
+.cv-product em{margin-left:auto;font-style:normal;font-weight:600;font-size:.9em;padding:5px 10px;border-radius:99px;background:var(--eblue);color:#fff;box-shadow:0 0 14px rgba(30,107,255,.6)}
+.cv-thumb{flex:none;width:clamp(34px,5vw,46px);aspect-ratio:1;border-radius:12px;display:grid;place-items:center;color:#CFE2FF;background:radial-gradient(circle at 30% 20%,rgba(98,164,255,.6),rgba(30,107,255,.15))}
+.cv-thumb svg{width:66%;height:66%}
+.cv-track{right:2%;bottom:6%;width:54%;animation:floatA 7s ease-in-out infinite reverse}
+.cv-track-head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:10px}
+.cv-track-head b{color:#fff;font-weight:600;white-space:nowrap}
+.cv-track-head span{font-size:.85em;font-weight:600;color:var(--ok);white-space:nowrap}
+.cv-progress{height:6px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
+.cv-progress i{display:block;height:100%;width:68%;border-radius:3px;background:linear-gradient(90deg,var(--eblue),#8EC0FF);animation:trackGo 5s var(--ease) infinite}
+@keyframes trackGo{0%{width:8%}60%,100%{width:72%}}
+.cv-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:8px;font-size:.78em;color:var(--bgray)}
+.cv-steps span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv-steps span:nth-child(-n+3){color:#DCE6F7}
+.cv-pill{position:absolute;left:4%;bottom:0;display:flex;align-items:center;gap:9px;padding:9px 14px;border-radius:999px;background:rgba(12,20,40,.9);border:1px solid var(--line-2);font-size:clamp(10px,1.25vw,13px);font-weight:600;box-shadow:0 20px 40px -12px rgba(0,0,0,.8);animation:floatB 5.5s ease-in-out infinite}
+.cv-pill i{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(61,220,151,.18);animation:pulse 2.4s infinite}
+
+/* magnetic buttons (desktop pointers only, see JS) */
+.magnetic{transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+
+/* B. solutions */
+.com-solutions{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr))}
+.sol{display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(180deg,rgba(14,24,46,.75),rgba(8,14,28,.75));border-color:rgba(130,165,255,.16)}
+.sol-vis{position:relative;height:150px;border-bottom:1px solid var(--line);overflow:hidden;background:radial-gradient(circle at 85% 0%,rgba(30,107,255,.4),transparent 60%),linear-gradient(160deg,#0D1934,#070D1A)}
+.sol-vis svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .7s var(--ease)}
+.sol:hover .sol-vis svg{transform:scale(1.05)}
+.sol-ico{position:absolute;left:20px;top:20px;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#4B94FF,var(--eblue));box-shadow:0 10px 26px -8px rgba(30,107,255,.8)}
+.sol-ico svg{position:static;width:22px;height:22px}
+.sol-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.sol-body h4{font-size:19px;font-weight:700;margin-bottom:8px}
+.sol-body p{color:var(--bgray);font-size:15px;margin-bottom:18px}
+.sol-body .live-link{margin-top:auto;align-self:flex-start}
+
+/* C. features */
+.com-legend{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 8px;color:var(--bgray);font-size:14px;margin-top:6px}
+.com-legend .sep{color:var(--dim);margin:0 6px}
+.fb{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.fb::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.fb.std{color:var(--blue-2);background:rgba(47,128,255,.1);border:1px solid rgba(98,164,255,.35)}
+.fb.opt{color:var(--gold-2);background:rgba(226,190,99,.08);border:1px solid rgba(226,190,99,.4)}
+.com-features{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr))}
+.feat{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:16px}
+.feat-ico{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--blue-2);background:rgba(30,107,255,.12);border:1px solid rgba(98,164,255,.22)}
+.feat.opt .feat-ico{color:var(--gold-2);background:rgba(226,190,99,.08);border-color:rgba(226,190,99,.3)}
+.feat-ico svg{width:20px;height:20px}
+.feat b{display:block;font-weight:600;font-size:15px;line-height:1.35;margin-bottom:6px}
+
+/* D. demo shop */
+.shop{border-radius:24px;padding:18px;background:linear-gradient(180deg,rgba(14,24,46,.85),rgba(6,10,20,.92));border:1px solid rgba(130,165,255,.22);box-shadow:0 50px 120px -50px rgba(30,107,255,.5)}
+@media (min-width:640px){.shop{padding:24px}}
+.shop-note{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;margin-bottom:16px;border-radius:12px;font-size:13px;color:var(--gold-2);background:rgba(226,190,99,.07);border:1px solid rgba(226,190,99,.3)}
+.shop-note svg{flex:none;width:18px;height:18px;margin-top:1px}
+.shop-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.shop-brand{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-head);font-weight:600;font-size:18px;white-space:nowrap}
+.shop-brand b{color:var(--blue-2);font-weight:800}
+.shop-search{position:relative;flex:1 1 240px;order:3;display:block}
+@media (min-width:760px){.shop-search{order:0}}
+.shop-search svg{position:absolute;left:14px;top:50%;width:18px;height:18px;transform:translateY(-50%);color:var(--dim);pointer-events:none}
+.shop-search input{width:100%;height:46px;padding:0 16px 0 42px;border-radius:999px;border:1px solid var(--line-2);background:rgba(5,7,13,.6);color:var(--text);font:inherit;font-size:16px;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.shop-search input::placeholder{color:#5F6B84}
+.shop-search input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,128,255,.18)}
+.shop-cart{margin-left:auto;display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 16px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);font-weight:600;font-size:14px;transition:border-color .2s,background .2s}
+.shop-cart:hover{border-color:rgba(98,164,255,.6);background:rgba(47,128,255,.1)}
+.shop-cart svg{width:20px;height:20px}
+.shop-count{min-width:22px;height:22px;padding:0 6px;border-radius:99px;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--eblue);color:#fff}
+.shop-count.bump{animation:bump .45s var(--ease)}
+@keyframes bump{40%{transform:scale(1.35)}}
+.shop-cats{display:flex;gap:8px;overflow-x:auto;padding:16px 0 4px;margin-bottom:12px;scrollbar-width:none}
+.shop-cats::-webkit-scrollbar{display:none}
+.shop-cats button{flex:none;padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;color:var(--bgray);border:1px solid var(--line);background:rgba(255,255,255,.03);transition:color .2s,background .2s,border-color .2s}
+.shop-cats button:hover{color:var(--text);border-color:var(--line-2)}
+.shop-cats button[aria-pressed="true"]{color:#fff;background:var(--eblue);border-color:var(--eblue);box-shadow:0 6px 18px -6px rgba(30,107,255,.8)}
+.shop-body{display:grid;gap:16px}
+@media (min-width:1000px){.shop-body{grid-template-columns:1fr 320px;align-items:start}}
+.shop-body>*{min-width:0}
+.shop-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));align-content:start}
+@media (max-width:520px){.shop-grid{grid-template-columns:1fr 1fr;gap:10px}.prod-body{padding:10px}.prod-add span{display:none}.prod-add{padding:8px 10px}.prod-price{font-size:15px}}
+.prod{display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid var(--line);transition:border-color .25s,transform .25s var(--ease)}
+.prod:hover{border-color:rgba(98,164,255,.4);transform:translateY(-3px)}
+.prod-img{--h:215;aspect-ratio:4/3;display:grid;place-items:center;color:rgba(255,255,255,.9);background:radial-gradient(circle at 30% 20%,hsla(var(--h),85%,62%,.55),transparent 60%),linear-gradient(160deg,hsl(var(--h),35%,16%),#080D18)}
+.prod-img svg{width:44%;height:44%;filter:drop-shadow(0 8px 16px rgba(0,0,0,.5))}
+.prod-body{padding:12px 12px 14px;display:flex;flex-direction:column;flex:1;gap:4px}
+.prod-body h5{margin:0;font-family:var(--ff-body);font-size:14px;font-weight:600;line-height:1.35}
+.prod-cat{font-size:12px;color:var(--dim)}
+.prod-rate{font-size:12px;color:var(--gold-2);letter-spacing:.04em}
+.prod-rate span{color:var(--dim);letter-spacing:0;margin-left:4px}
+.prod-foot{margin-top:auto;padding-top:8px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.prod-price{font-family:var(--ff-head);font-weight:700;font-size:16px}
+.prod-add{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(30,107,255,.15);color:#CFE2FF;border:1px solid rgba(98,164,255,.35);transition:background .2s,color .2s,transform .2s}
+.prod-add:hover{background:var(--eblue);color:#fff}
+.prod-add.added{background:rgba(61,220,151,.15);border-color:rgba(61,220,151,.45);color:var(--ok)}
+.prod-add svg{width:14px;height:14px}
+.shop-empty{grid-column:1/-1;padding:40px 20px;text-align:center;color:var(--bgray);border:1px dashed var(--line-2);border-radius:16px}
+.shop-empty b{display:block;color:var(--text);font-family:var(--ff-head);font-size:18px;margin-bottom:6px}
+.shop-empty button{margin-top:14px}
+.shop-side{display:grid;gap:12px}
+.shop-panel{padding:18px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.shop-panel h4{font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.shop-panel h4 small{font-family:var(--ff-body);font-size:12px;font-weight:500;color:var(--dim)}
+.cart-list{display:grid;gap:10px;margin-bottom:14px;max-height:240px;overflow:auto}
+.cart-item{display:flex;align-items:center;gap:10px;font-size:14px}
+.cart-item .ci-name{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cart-item .ci-qty{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:999px}
+.cart-item .ci-qty button{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;color:var(--blue-2);font-weight:700}
+.cart-item .ci-qty button:hover{background:rgba(47,128,255,.12)}
+.cart-item .ci-qty span{min-width:18px;text-align:center;font-weight:600;font-size:13px}
+.cart-item .ci-sum{font-family:var(--ff-head);font-weight:600;min-width:58px;text-align:right}
+.cart-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:12px;border-top:1px solid var(--line);margin-bottom:14px;font-weight:600}
+.cart-total strong{font-family:var(--ff-head);font-size:20px}
+.cart-empty{color:var(--bgray);font-size:14px;margin-bottom:4px}
+.shop-panel .btn{width:100%}
+.shop-panel .btn[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.track-id{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--bgray);margin-bottom:14px}
+.track-id b{color:var(--text)}
+.track-steps{display:grid;gap:0}
+.track-steps li{position:relative;display:flex;align-items:center;gap:12px;padding:0 0 18px 0;font-size:14px;color:var(--dim)}
+.track-steps li:last-child{padding-bottom:0}
+.track-steps li::before{content:"";flex:none;width:14px;height:14px;border-radius:50%;border:2px solid var(--line-2);background:var(--bg);z-index:1;transition:background .4s,border-color .4s,box-shadow .4s}
+.track-steps li::after{content:"";position:absolute;left:6px;top:14px;bottom:0;width:2px;background:var(--line)}
+.track-steps li:last-child::after{display:none}
+.track-steps li.done{color:var(--text)}
+.track-steps li.done::before{border-color:var(--eblue);background:var(--eblue)}
+.track-steps li.done::after{background:var(--eblue)}
+.track-steps li.now{color:#fff;font-weight:600}
+.track-steps li.now::before{border-color:#8EC0FF;background:var(--eblue);box-shadow:0 0 0 5px rgba(30,107,255,.22)}
+.track-steps li.now::after{background:var(--line)}
+.track-steps li span{margin-left:auto;font-size:12px;color:var(--dim);font-weight:400}
+.track-tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-2)}
+
+/* E. process */
+.com-steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;position:relative}
+.cstep{position:relative;padding:24px 22px 24px 84px;border-radius:var(--radius)}
+.cstep-num{position:absolute;left:22px;top:22px;font-family:var(--ff-head);font-weight:800;font-size:28px;line-height:1;background:linear-gradient(180deg,#9CC6FF,var(--eblue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cstep h4{font-size:19px;font-weight:700;margin-bottom:6px}
+.cstep p{color:var(--bgray);font-size:15px}
+@media (max-width:999px){
+  .com-steps::before{content:"";position:absolute;left:38px;top:58px;bottom:30px;width:2px;background:linear-gradient(var(--eblue),rgba(30,107,255,.08))}
+  .cstep{background:transparent;border-color:transparent;backdrop-filter:none}
+  .cstep-num{background:var(--navy);padding:4px 0}
+}
+@media (min-width:1000px){
+  .com-steps{grid-template-columns:repeat(4,1fr);padding-top:20px}
+  .com-steps::before{content:"";position:absolute;left:12%;right:12%;top:60px;height:2px;background:linear-gradient(90deg,rgba(30,107,255,.1),var(--eblue),rgba(30,107,255,.1));transform:scaleX(0);transform-origin:left;transition:transform 1.6s var(--ease) .2s}
+  .com-steps.in::before{transform:scaleX(1)}
+  .cstep{padding:30px 22px 26px;text-align:left}
+  .cstep-num{position:static;display:block;margin-bottom:34px;font-size:36px}
+}
+
+/* F. why */
+@media (min-width:1000px){.com-why{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}.com-why .section-head{position:sticky;top:calc(var(--header-h) + 40px);margin-bottom:0}}
+.com-why-grid{display:grid;gap:12px}
+@media (min-width:600px){.com-why-grid{grid-template-columns:1fr 1fr}}
+.why{display:flex;gap:14px;align-items:flex-start;padding:20px;border-radius:18px}
+.why-ico{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#4B94FF,var(--eblue));box-shadow:0 8px 20px -8px rgba(30,107,255,.8)}
+.why-ico svg{width:18px;height:18px}
+.why b{display:block;font-weight:600;font-size:16px;margin-bottom:4px}
+.why p{color:var(--bgray);font-size:14px}
+
+/* G. final CTA */
+.com-cta{position:relative;overflow:hidden;margin-top:120px;text-align:center;padding:64px 22px;border-radius:32px;background:radial-gradient(ellipse 70% 90% at 50% 0%,rgba(30,107,255,.45),transparent 70%),linear-gradient(180deg,#0B1733,#05070B);border:1px solid rgba(98,164,255,.35);box-shadow:0 40px 120px -40px rgba(30,107,255,.6)}
+@media (min-width:640px){.com-cta{padding:72px 40px}}
+.com-cta h3{font-size:clamp(28px,4.4vw,50px);font-weight:800;letter-spacing:-.025em;max-width:860px;margin:0 auto 16px}
+.com-cta>p{color:var(--bgray);font-size:clamp(16px,1.6vw,19px);max-width:620px;margin:0 auto 30px}
+.com-types{border:0;margin:0 auto 30px;padding:0;max-width:820px}
+.com-types legend{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-2);margin:0 auto 14px;padding:0}
+.com-types>div{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.com-types label{position:relative;cursor:pointer}
+.com-types input{position:absolute;opacity:0;width:1px;height:1px}
+.com-types span{display:inline-block;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:500;color:var(--bgray);border:1px solid var(--line-2);background:rgba(255,255,255,.03);transition:color .2s,background .2s,border-color .2s}
+.com-types label:hover span{color:var(--text);border-color:rgba(98,164,255,.6)}
+.com-types input:checked+span{color:#fff;background:var(--eblue);border-color:var(--eblue);box-shadow:0 6px 18px -6px rgba(30,107,255,.8)}
+.com-types input:focus-visible+span{outline:2px solid var(--blue-2);outline-offset:3px}
+.com-cta-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+@media (max-width:520px){.com-cta-btns .btn{width:100%}}
+
 /* ================= REVEAL ================= */
 .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}
@@ -648,6 +875,7 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--header-h) + 8px)}
         <li><a href="#barbershops" data-i18n="nav.barbers">Barbershops</a></li>
         <li><a href="#supermarkets" data-i18n="nav.markets">Supermarkets</a></li>
         <li><a href="#fashion" data-i18n="nav.fashion">Fashion</a></li>
+        <li><a href="#commerce" data-i18n="nav.commerce">E-commerce</a></li>
         <li><a href="#process" data-i18n="nav.process">Process</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
@@ -831,6 +1059,150 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--header-h) + 8px)}
   </div>
 </section>
 
+<!-- ================= 6. E-COMMERCE & DELIVERY PLATFORMS =================
+     Text: I18N.<lang>.com · Data: COMMERCE (below PROJECTS) · Logic: initCommerce()
+     The shop preview is a front-end demo only: no real orders, payments or shipping. -->
+<section class="section com" id="commerce" aria-labelledby="com-title">
+  <div class="com-bg" aria-hidden="true"><div class="com-glow c1"></div><div class="com-glow c2"></div><div class="com-grid"></div></div>
+  <div class="container">
+
+    <!-- A. Hero -->
+    <div class="com-hero">
+      <div class="com-hero-copy reveal">
+        <span class="kicker"><span class="num">06</span><span data-i18n="com.eyebrow">Digital commerce • E-commerce • Logistics</span></span>
+        <h2 class="com-title" id="com-title" data-i18n-html="com.title">Your Next Big Idea. <span class="grad">Our Technology.</span></h2>
+        <p class="com-lead" data-i18n="com.lead">From online stores to Amazon-style marketplaces and intelligent delivery platforms, we build the digital infrastructure that helps businesses grow.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg magnetic" href="#contact" data-biz="commerce" data-commerce="platform">
+            <span data-i18n="com.cta1">Build Your Platform</span>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost btn-lg" href="#com-solutions" data-i18n="com.cta2">Explore Our Solutions</a>
+        </div>
+      </div>
+
+      <div class="com-visual reveal" aria-hidden="true">
+        <div class="cv-dash">
+          <div class="cv-bar"><i></i><i></i><i></i><span data-i18n="com.vis.url">admin.your-store.com</span><em data-i18n="com.demoTag">Demo</em></div>
+          <div class="cv-body">
+            <div class="cv-side"><b></b><span class="on"></span><span></span><span></span><span></span><span></span></div>
+            <div class="cv-main">
+              <div class="cv-kpis">
+                <div><small data-i18n="com.vis.k1">Orders today</small><strong>128</strong><s class="up">+12%</s></div>
+                <div><small data-i18n="com.vis.k2">In delivery</small><strong>34</strong><s class="up">+5%</s></div>
+                <div><small data-i18n="com.vis.k3">Products</small><strong>1,240</strong><s>—</s></div>
+              </div>
+              <div class="cv-chart"><small data-i18n="com.vis.chart">Sales · last 7 days</small><div class="cv-bars"><i style="--v:.42"></i><i style="--v:.58"></i><i style="--v:.5"></i><i style="--v:.74"></i><i style="--v:.66"></i><i style="--v:.88"></i><i style="--v:.96"></i></div></div>
+              <div class="cv-rows"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="cv-card cv-product">
+          <div class="cv-thumb"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 28v-4a14 14 0 0 1 28 0v4"/><rect x="7" y="27" width="8" height="13" rx="3"/><rect x="33" y="27" width="8" height="13" rx="3"/></svg></div>
+          <div><b data-i18n="com.vis.product">Wireless headphones</b><span>$89</span></div>
+          <em data-i18n="com.vis.add">Add</em>
+        </div>
+        <div class="cv-card cv-track">
+          <div class="cv-track-head"><b data-i18n="com.vis.order">Order #WC-2048</b><span data-i18n="com.vis.onway">On the way</span></div>
+          <div class="cv-progress"><i></i></div>
+          <div class="cv-steps"><span data-i18n="com.track.s0">Ordered</span><span data-i18n="com.track.s1">Packed</span><span data-i18n="com.track.s2">Shipped</span><span data-i18n="com.track.s3">Delivered</span></div>
+        </div>
+        <div class="cv-pill"><i></i><span data-i18n="com.vis.courier">Courier arriving · 12 min</span></div>
+      </div>
+    </div>
+
+    <!-- B. Solutions -->
+    <div class="com-block" id="com-solutions">
+      <header class="section-head reveal">
+        <span class="kicker" data-i18n="com.sol.kicker">Solutions</span>
+        <h3 class="section-title" data-i18n="com.sol.title">Platforms we build</h3>
+        <p class="section-pitch" data-i18n="com.sol.sub">Examples of the platform types we design and develop — each one tailored to your business.</p>
+      </header>
+      <div class="com-solutions reveal" id="com-sol-grid"></div>
+    </div>
+
+    <!-- C. Features -->
+    <div class="com-block">
+      <header class="section-head center reveal">
+        <span class="kicker" data-i18n="com.feat.kicker">Capabilities</span>
+        <h3 class="section-title" data-i18n="com.feat.title">Everything Your Digital Business Needs.</h3>
+        <p class="com-legend"><span class="fb std" data-i18n="com.feat.std">Standard</span> <span data-i18n="com.feat.stdNote">included in platform projects</span><span class="sep" aria-hidden="true">·</span><span class="fb opt" data-i18n="com.feat.opt">Custom integration</span> <span data-i18n="com.feat.optNote">built on request, quoted separately</span></p>
+      </header>
+      <ul class="com-features reveal" id="com-feat-grid"></ul>
+    </div>
+
+    <!-- D. Interactive preview (demo) -->
+    <div class="com-block" id="com-demo">
+      <header class="section-head center reveal">
+        <span class="kicker" data-i18n="com.demo.kicker">Interactive preview</span>
+        <h3 class="section-title" data-i18n="com.demo.title">Try a miniature store</h3>
+        <p class="section-pitch" data-i18n="com.demo.sub">Search, filter and add products to the cart — this is how your customers could shop.</p>
+      </header>
+      <div class="shop reveal">
+        <div class="shop-note" role="note"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6h.01" stroke-linecap="round"/></svg><span data-i18n="com.demo.note">Demo with sample data. No real orders, payments or deliveries are made.</span></div>
+        <div class="shop-top">
+          <span class="shop-brand"><b>Celestia</b> Market <em data-i18n="com.demoTag">Demo</em></span>
+          <label class="shop-search">
+            <span class="sr-only" data-i18n="com.demo.searchLabel">Search products</span>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="M14 14l4 4" stroke-linecap="round"/></svg>
+            <input type="search" id="shop-q" autocomplete="off" data-i18n-ph="com.demo.searchPh">
+          </label>
+          <button type="button" class="shop-cart" id="shop-cart-btn" aria-controls="shop-side">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/></svg>
+            <span class="shop-cart-label" data-i18n="com.demo.cart">Cart</span>
+            <span class="shop-count" id="shop-count">0</span>
+          </button>
+        </div>
+        <div class="shop-cats" id="shop-cats" role="group" data-i18n-aria="com.demo.catsLabel" aria-label="Categories"></div>
+        <div class="shop-body">
+          <div class="shop-grid" id="shop-grid" aria-live="polite"></div>
+          <aside class="shop-side" id="shop-side" aria-labelledby="shop-side-title">
+            <div class="shop-panel" id="shop-cart-panel"></div>
+            <div class="shop-panel" id="shop-track"></div>
+          </aside>
+        </div>
+        <p class="sr-only" id="shop-live" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <!-- E. Process -->
+    <div class="com-block">
+      <header class="section-head center reveal">
+        <span class="kicker" data-i18n="com.proc.kicker">Our process</span>
+        <h3 class="section-title" data-i18n="com.proc.title">How we build your platform</h3>
+      </header>
+      <ol class="com-steps reveal" id="com-steps"></ol>
+    </div>
+
+    <!-- F. Why WebCreators -->
+    <div class="com-block com-why">
+      <header class="section-head reveal">
+        <span class="kicker" data-i18n="com.why.kicker">Why WEB-CREATORS</span>
+        <h3 class="section-title" data-i18n="com.why.title">More Than a Website. A Digital Business Engine.</h3>
+        <p class="section-pitch" data-i18n="com.why.sub">We design every platform around how your business actually works — and stay with you as it grows.</p>
+      </header>
+      <ul class="com-why-grid reveal" id="com-why-grid"></ul>
+    </div>
+
+    <!-- G. Final CTA -->
+    <div class="com-cta reveal">
+      <h3 data-i18n="com.final.title">Have an Idea Bigger Than a Website?</h3>
+      <p data-i18n="com.final.sub">Let's transform your vision into a powerful digital platform built around your business.</p>
+      <fieldset class="com-types">
+        <legend data-i18n="com.final.pick">What would you like to build?</legend>
+        <div id="com-types"></div>
+      </fieldset>
+      <div class="com-cta-btns">
+        <a class="btn btn-primary btn-lg magnetic" href="#contact" data-biz="commerce" data-commerce="final">
+          <span data-i18n="com.final.cta1">Discuss Your Project</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="https://t.me/Webcreators10" target="_blank" rel="noopener"><span data-i18n="com.final.cta2">Contact WEB-CREATORS</span><span class="sr-only" data-i18n="common.newTab">(opens in a new tab)</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= ADD-ONS ================= -->
 <section class="section section-alt" id="addons">
   <div class="container">
@@ -992,6 +1364,7 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--header-h) + 8px)}
           <li><a href="#barbershops" data-i18n="barber.title">Barbershops &amp; Beauty</a></li>
           <li><a href="#supermarkets" data-i18n="market.title">Supermarkets &amp; E-commerce</a></li>
           <li><a href="#fashion" data-i18n="fashion.title">Clothing Stores &amp; Fashion</a></li>
+          <li><a href="#commerce" data-i18n="com.navTitle">E-Commerce &amp; Delivery Platforms</a></li>
         </ul>
       </nav>
       <div>
@@ -1050,25 +1423,71 @@ const SECTION_BIZ = { rest: "restaurant", hotel: "hotel", barber: "barber", mark
 const PROJECTS = {
   rest: { groups: [
     { tier: "simple", items: [
-      { name: "Jumanji Restaurant", url: "https://jumanjirestaurant.netlify.app", type: "restaurant", tags: ["onlineMenu", "oneTap", "mobile"], hue: 140 },
-      { name: "Fillet Restaurant", url: "https://filletrestaurant.netlify.app", type: "restaurant", tags: ["onlineMenu", "map", "mobile"], hue: 12 }
+      { name: "Celestia Restaurant", url: "https://jumanjirestaurant.netlify.app", type: "restaurant", tags: ["onlineMenu", "oneTap", "mobile"], hue: 140 },
+      { name: "Celestia Restaurant 2", url: "https://filletrestaurant.netlify.app", type: "restaurant", tags: ["onlineMenu", "map", "mobile"], hue: 12 }
     ]},
     { tier: "medium", items: [
-      { name: "Shohsomsa Namangan", url: "https://shohsomsanamangan.netlify.app", type: "restaurant", tags: ["onlineMenu", "map", "mobile"], hue: 30 },
-      { name: "Istanbul Asylum of Taste", url: "https://istanbultasteofalyuminuz.netlify.app", type: "turkish", tags: ["reservations", "events", "langs3"], hue: 355 },
-      { name: "Ahmadbek Restaurant", url: "https://ahmadbekrestaurantuz.netlify.app", type: "restaurant", tags: ["menu", "booking", "premiumDesign"], hue: 42 }
+      { name: "Celestia Samsa", url: "https://shohsomsanamangan.netlify.app", type: "restaurant", tags: ["onlineMenu", "map", "mobile"], hue: 30 },
+      { name: "Celestia Taste of Kingdom", url: "https://istanbultasteofalyuminuz.netlify.app", type: "turkish", tags: ["reservations", "events", "langs3"], hue: 355 },
+      { name: "Celestia Taste of Heaven Restaurant", url: "https://ahmadbekrestaurantuz.netlify.app", type: "restaurant", tags: ["menu", "booking", "premiumDesign"], hue: 42 }
     ]},
     { tier: "premium", items: [
-      { name: "Nammakon Restaurant", url: "https://nammakonrestaurant.netlify.app", type: "restaurant", tags: ["menu", "reservations", "premiumDesign"], hue: 22 },
-      { name: "Navbahor Tantanalar Saroyi", url: "https://navbahornamanganuz.netlify.app", type: "wedding", tags: ["banquets", "weddings", "langs3"], hue: 320 },
-      { name: "Zeid Garden", url: "https://zeidgardenuz.netlify.app", type: "restaurant", tags: ["menu", "reservations", "premiumDesign"], hue: 150 },
-      { name: "Beshqozon", url: "https://beshqozonofficial.netlify.app", type: "restaurant", tags: ["menu", "booking", "premiumDesign"], hue: 36 }
+      { name: "Celestia Glorious Restaurant & Cafe", url: "https://nammakonrestaurant.netlify.app", type: "restaurant", tags: ["menu", "reservations", "premiumDesign"], hue: 22 },
+      { name: "Celestia Wedding Venue", url: "https://navbahornamanganuz.netlify.app", type: "wedding", tags: ["banquets", "weddings", "langs3"], hue: 320 },
+      { name: "Celestia Angelic Garden", url: "https://zeidgardenuz.netlify.app", type: "restaurant", tags: ["menu", "reservations", "premiumDesign"], hue: 150 },
+      { name: "Celestia International Restaurant", url: "https://beshqozonofficial.netlify.app", type: "restaurant", tags: ["menu", "booking", "premiumDesign"], hue: 36 }
     ]}
   ]},
   hotel:   { items: [ { name: "The Celestia Luxury Hotel & Resort", url: "", type: "hotel", tier: "concept", tags: ["rooms", "onlineBooking", "multilang"], hue: 200 } ], next: true },
   barber:  { items: [ { name: "CELESTIA Barbershop", url: "https://celestia-barbershop.vercel.app", type: "barber", tags: ["booking6", "liveQueue", "promo"], hue: 225 } ] },
   market:  { items: [ { name: "Celestia Premium Online Supermarket", url: "https://celestia-premium-online-supermarket.vercel.app", type: "market", tags: ["products", "admin", "delivery"], hue: 160 } ] },
-  fashion: { items: [ { name: "Afsona London", url: "https://afsonalondonkiyidokoni.netlify.app", type: "clothing", tags: ["catalog", "sizes", "mobileShop"], hue: 280 }, { name: "CELESTIA Fashion", url: "https://celestia-fashion-5yjs.vercel.app", type: "clothing", tags: ["catalog", "sizes", "langs3"], hue: 255 } ] }
+  fashion: { items: [ { name: "Celestia Fashion Shop 2", url: "https://afsonalondonkiyidokoni.netlify.app", type: "clothing", tags: ["catalog", "sizes", "mobileShop"], hue: 280 }, { name: "CELESTIA Fashion", url: "https://celestia-fashion-5yjs.vercel.app", type: "clothing", tags: ["catalog", "sizes", "langs3"], hue: 255 } ] }
+};
+
+/* =====================================================================
+   E-COMMERCE SECTION — icons, demo products and feature flags.
+   Text for all of these lives in I18N.<lang>.com
+   feature kind: "std" = standard in platform projects, "opt" = custom integration
+   Demo prices are USD and only used in the miniature store preview.
+   ===================================================================== */
+const COMMERCE = {
+  solutions: [
+    { id: "store",  type: "store",  icon: '<path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>' },
+    { id: "market", type: "market", icon: '<path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v8h14v-8M10 20v-5h4v5"/>' },
+    { id: "food",   type: "food",   icon: '<path d="M3 13h18"/><path d="M5 13a7 7 0 0 0 14 0"/><path d="M9 9c0-2 2-2 2-4M13 9c0-2 2-2 2-4"/>' },
+    { id: "b2b",    type: "b2b",    icon: '<rect x="3" y="12" width="8" height="8" rx="1"/><rect x="13" y="12" width="8" height="8" rx="1"/><rect x="8" y="3" width="8" height="8" rx="1"/>' },
+    { id: "cargo",  type: "cargo",  icon: '<path d="M2 6h11v10H2z"/><path d="M13 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>' },
+    { id: "custom", type: "custom", icon: '<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/>' }
+  ],
+  features: [
+    ["search", "std", '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>'],
+    ["cart", "std", '<path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.2"/><circle cx="17" cy="20.5" r="1.2"/>'],
+    ["accounts", "std", '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'],
+    ["inventory", "std", '<path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/>'],
+    ["admin", "std", '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'],
+    ["seller", "opt", '<path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v8h14v-8"/>'],
+    ["tracking", "opt", '<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>'],
+    ["payments", "opt", '<rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/>'],
+    ["i18n", "std", '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>'],
+    ["mobile", "std", '<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>'],
+    ["seo", "std", '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>'],
+    ["notify", "opt", '<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>'],
+    ["roles", "std", '<path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/>'],
+    ["ai", "opt", '<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>']
+  ],
+  cats: ["all", "electronics", "fashion", "home", "grocery"],
+  products: [
+    { id: "p1", cat: "electronics", price: 89,  rating: 4.8, reviews: 214, hue: 215, icon: '<path d="M10 28v-4a14 14 0 0 1 28 0v4"/><rect x="7" y="27" width="8" height="13" rx="3"/><rect x="33" y="27" width="8" height="13" rx="3"/>' },
+    { id: "p2", cat: "electronics", price: 149, rating: 4.6, reviews: 98,  hue: 258, icon: '<rect x="14" y="14" width="20" height="20" rx="6"/><path d="M18 14l2-8h8l2 8M18 34l2 8h8l2-8M24 20v5l3 2"/>' },
+    { id: "p3", cat: "fashion",     price: 72,  rating: 4.7, reviews: 176, hue: 8,   icon: '<path d="M5 32c0-4 1-10 3-12l6 4 6-6c4 6 10 10 18 11 4 1 5 3 5 6v1H5z"/><path d="M5 37h38"/>' },
+    { id: "p4", cat: "fashion",     price: 54,  rating: 4.5, reviews: 63,  hue: 30,  icon: '<rect x="12" y="14" width="24" height="28" rx="8"/><path d="M18 14v-3a6 6 0 0 1 12 0v3M17 30h14v6H17z"/>' },
+    { id: "p5", cat: "home",        price: 39,  rating: 4.4, reviews: 51,  hue: 45,  icon: '<path d="M16 8h16l6 14H10z"/><path d="M24 22v16M16 40h16"/>' },
+    { id: "p6", cat: "home",        price: 24,  rating: 4.9, reviews: 132, hue: 190, icon: '<path d="M10 16h22v16a8 8 0 0 1-8 8h-6a8 8 0 0 1-8-8z"/><path d="M32 20h3a5 5 0 0 1 0 10h-3M17 6c0 3 3 3 3 6M24 6c0 3 3 3 3 6"/>' },
+    { id: "p7", cat: "grocery",     price: 16,  rating: 4.8, reviews: 305, hue: 24,  icon: '<path d="M13 12h22l3 30H10z"/><path d="M13 12l3-5h16l3 5"/><ellipse cx="24" cy="28" rx="5" ry="7"/><path d="M24 21c-2 4 2 10 0 14"/>' },
+    { id: "p8", cat: "grocery",     price: 19,  rating: 4.6, reviews: 88,  hue: 120, icon: '<path d="M24 16c-4-3-14-3-14 9 0 9 6 17 10 17 2 0 3-1 4-1s2 1 4 1c4 0 10-8 10-17 0-12-10-12-14-9z"/><path d="M24 16c0-4 2-7 6-9"/>' }
+  ],
+  types: ["store", "market", "food", "grocery", "b2b", "cargo", "fashion", "custom"],
+  why: ["custom", "ux", "mobile", "scale", "i18n", "business", "integrations", "growth"]
 };
 
 const LANGS = {
@@ -1092,7 +1511,7 @@ const I18N = {
       ogDesc: "Modern websites and Telegram bots for restaurants, hotels, barbershops, supermarkets and clothing stores — built in days, not months."
     },
     skip: "Skip to content",
-    nav: { restaurants: "Restaurants", hotels: "Hotels", barbers: "Barbershops", markets: "Supermarkets", fashion: "Fashion", process: "Process", contact: "Contact", cta: "Get a free concept", menu: "Open menu", close: "Close menu", lang: "Choose language" },
+    nav: { restaurants: "Restaurants", hotels: "Hotels", barbers: "Barbershops", markets: "Supermarkets", fashion: "Fashion", commerce: "E-commerce", process: "Process", contact: "Contact", cta: "Get a free concept", menu: "Open menu", close: "Close menu", lang: "Choose language" },
     hero: {
       badge: "Web design agency · Uzbekistan",
       title: "Turn your business into an <span class='grad'>online success</span>",
@@ -1159,7 +1578,7 @@ const I18N = {
     contact: {
       kicker: "Contact", title: "Get a quick quote", sub: "Tell us about your project — we'll reply with a price and a free concept.",
       name: "Your name", namePh: "e.g. Aziz", phone: "Phone", biz: "Business type", bizPh: "Choose your business",
-      bizOpts: { restaurant: "Restaurant / cafe", hotel: "Hotel", barber: "Barbershop / beauty salon", market: "Supermarket / online store", clothing: "Clothing store", other: "Other" },
+      bizOpts: { restaurant: "Restaurant / cafe", hotel: "Hotel", barber: "Barbershop / beauty salon", market: "Supermarket / online store", clothing: "Clothing store", commerce: "E-commerce / delivery platform", other: "Other" },
       budget: "Budget", budgetPh: "Choose a budget",
       budgetOpts: { b1: "Up to $300", b2: "$300–500", b3: "$500–800", b4: "$800–1,000", b5: "$1,000+", b6: "Not sure yet" },
       msg: "Message", msgPh: "Tell us a little about your business and what you need", optional: "(optional)",
@@ -1172,8 +1591,11 @@ const I18N = {
       conceptMsg: "Hello! I'd like to get a free concept of my website.",
       planMsg: "I'm interested in the “{plan}” plan ({price}).",
       demoMsg: "I'd like to see a demo of “{name}”.",
+      comMsg: "Hello! I'd like to build a digital commerce platform: {type}.",
+      comMsgAny: "Hello! I'd like to discuss building an e-commerce or delivery platform.",
       tgHeader: "New request from the website"
     },
+    com: {"navTitle": "E-Commerce & Delivery Platforms", "eyebrow": "Digital commerce • E-commerce • Logistics", "title": "Your Next Big Idea. <span class='grad'>Our Technology.</span>", "lead": "From online stores to Amazon-style marketplaces and intelligent delivery platforms, we build the digital infrastructure that helps businesses grow.", "cta1": "Build Your Platform", "cta2": "Explore Our Solutions", "demoTag": "Demo", "vis": {"url": "admin.your-store.com", "k1": "Orders today", "k2": "In delivery", "k3": "Products", "chart": "Sales · last 7 days", "product": "Wireless headphones", "add": "Add", "order": "Order #WC-2048", "onway": "On the way", "courier": "Courier arriving · 12 min"}, "sol": {"kicker": "Solutions", "title": "Platforms we build", "sub": "Examples of the platform types we design and develop — each one tailored to your business.", "more": "Discover solution", "items": {"store": {"t": "E-Commerce Stores", "d": "Launch a powerful online store with product catalogs, secure checkout integrations, inventory management and customer accounts."}, "market": {"t": "Marketplace Platforms", "d": "Build scalable Amazon-style shopping experiences with product discovery, seller management, customer dashboards and order processing."}, "food": {"t": "Food & Grocery Delivery", "d": "Create digital ordering experiences for restaurants, supermarkets, food businesses and local delivery services."}, "b2b": {"t": "B2B & Wholesale Commerce", "d": "Connect businesses with professional catalogs, bulk ordering, custom pricing and account management."}, "cargo": {"t": "Cargo & Logistics Systems", "d": "Develop shipment tracking, warehouse workflows, delivery management and operational dashboards."}, "custom": {"t": "Custom Commerce Platforms", "d": "Transform unique business ideas into tailor-made digital products designed around your specific requirements."}}}, "feat": {"kicker": "Capabilities", "title": "Everything Your Digital Business Needs.", "std": "Standard", "stdNote": "included in platform projects", "opt": "Custom integration", "optNote": "built on request, quoted separately", "items": {"search": "Smart product search & filtering", "cart": "Shopping cart & checkout flow", "accounts": "Customer accounts & order history", "inventory": "Product, inventory & category management", "admin": "Admin dashboard & business analytics", "seller": "Seller dashboards for multi-vendor platforms", "tracking": "Shipment tracking & delivery status", "payments": "Payment gateway integration (subject to provider availability)", "i18n": "Multiple languages & currencies", "mobile": "Mobile-first responsive design", "seo": "Search engine optimization", "notify": "Notifications (Telegram, SMS, e-mail)", "roles": "Role-based access & security", "ai": "AI-assisted recommendations & customer support"}}, "demo": {"kicker": "Interactive preview", "title": "Try a miniature store", "sub": "Search, filter and add products to the cart — this is how your customers could shop.", "note": "Demo with sample data. No real orders, payments or deliveries are made.", "searchLabel": "Search products", "searchPh": "Search products…", "cart": "Cart", "catsLabel": "Categories", "cats": {"all": "All", "electronics": "Electronics", "fashion": "Fashion", "home": "Home", "grocery": "Grocery"}, "products": {"p1": "Wireless headphones", "p2": "Smart watch", "p3": "Running sneakers", "p4": "City backpack", "p5": "Desk lamp", "p6": "Ceramic mug set", "p7": "Arabica coffee beans", "p8": "Fresh fruit box"}, "rating": "Rated {r} out of 5", "add": "Add", "addAria": "Add {name} to cart", "inCart": "In cart · {n}", "cartAria": "Cart, {n} items", "less": "Remove one {name}", "more": "Add one more {name}", "items": "{n} items", "total": "Total", "cartEmpty": "Your cart is empty. Add a product to try the checkout.", "checkout": "Place demo order", "emptyT": "Nothing found", "emptyD": "Try another search or category.", "reset": "Show all products", "addedLive": "{name} added. Items in cart: {n}.", "removedLive": "{name} removed. Items in cart: {n}."}, "track": {"title": "Order tracking", "sample": "Sample", "sim": "Simulation", "order": "Order", "s0": "Ordered", "s1": "Packed", "s2": "Shipped", "s3": "Delivered", "times": ["10:24", "10:41", "11:05", "≈ 11:30"], "placedLive": "Demo order placed. Tracking has started."}, "proc": {"kicker": "Our process", "title": "How we build your platform", "steps": [{"t": "Discover", "d": "We learn your business model, customers, objectives and requirements."}, {"t": "Design", "d": "We create a polished user experience, visual identity and platform architecture."}, {"t": "Develop", "d": "We build the agreed features, responsive interfaces, integrations and admin tools."}, {"t": "Launch & Grow", "d": "We test, deploy, optimize and support the platform according to the agreed service plan."}]}, "why": {"kicker": "Why WEB-CREATORS", "title": "More Than a Website. A Digital Business Engine.", "sub": "We design every platform around how your business actually works — and stay with you as it grows.", "items": {"custom": {"t": "Custom-built solutions", "d": "No generic templates — every platform is designed for your business."}, "ux": {"t": "Modern user experience", "d": "Clean, fast interfaces your customers enjoy using."}, "mobile": {"t": "Mobile-first development", "d": "Built for the phones your customers shop on."}, "scale": {"t": "Scalable architecture", "d": "A technical foundation sized to your project and ready to grow."}, "i18n": {"t": "Multilingual by design", "d": "Uzbek, Russian, English, Turkish, Chinese and more."}, "business": {"t": "Business-focused design", "d": "Every screen is built to help you sell and serve customers."}, "integrations": {"t": "Integration-ready", "d": "Prepared to connect payments, delivery, CRM and messengers."}, "growth": {"t": "Long-term partnership", "d": "We keep improving your platform as your business grows."}}}, "types": {"store": "Online store", "market": "Marketplace", "food": "Food delivery", "grocery": "Grocery delivery", "b2b": "B2B / wholesale", "cargo": "Cargo & logistics", "fashion": "Fashion store", "custom": "Something else"}, "final": {"title": "Have an Idea Bigger Than a Website?", "sub": "Let's transform your vision into a powerful digital platform built around your business.", "pick": "What would you like to build?", "cta1": "Discuss Your Project", "cta2": "Contact WEB-CREATORS"}},
     footer: { tagline: "We build websites. You grow your business.", services: "Services", contacts: "Contacts", rights: "All rights reserved.", slogan: "Let's build the future together!", top: "Back to top ↑" },
     float: "Message us on Telegram"
   },
@@ -1187,7 +1609,7 @@ const I18N = {
       ogDesc: "Современные сайты и Telegram-боты для ресторанов, отелей, барбершопов, супермаркетов и магазинов одежды — за дни, а не месяцы."
     },
     skip: "Перейти к содержимому",
-    nav: { restaurants: "Рестораны", hotels: "Отели", barbers: "Барбершопы", markets: "Супермаркеты", fashion: "Одежда", process: "Процесс", contact: "Контакты", cta: "Бесплатный концепт", menu: "Открыть меню", close: "Закрыть меню", lang: "Выбрать язык" },
+    nav: { restaurants: "Рестораны", hotels: "Отели", barbers: "Барбершопы", markets: "Супермаркеты", fashion: "Одежда", commerce: "E-commerce", process: "Процесс", contact: "Контакты", cta: "Бесплатный концепт", menu: "Открыть меню", close: "Закрыть меню", lang: "Выбрать язык" },
     hero: {
       badge: "Веб-студия · Узбекистан",
       title: "Превратите ваш бизнес в <span class='grad'>успех онлайн</span>",
@@ -1254,7 +1676,7 @@ const I18N = {
     contact: {
       kicker: "Контакты", title: "Быстрый расчёт стоимости", sub: "Расскажите о проекте — мы ответим с ценой и бесплатным концептом.",
       name: "Ваше имя", namePh: "Например, Азиз", phone: "Телефон", biz: "Тип бизнеса", bizPh: "Выберите тип бизнеса",
-      bizOpts: { restaurant: "Ресторан / кафе", hotel: "Отель", barber: "Барбершоп / салон красоты", market: "Супермаркет / интернет-магазин", clothing: "Магазин одежды", other: "Другое" },
+      bizOpts: { restaurant: "Ресторан / кафе", hotel: "Отель", barber: "Барбершоп / салон красоты", market: "Супермаркет / интернет-магазин", clothing: "Магазин одежды", commerce: "Интернет-магазин / платформа доставки", other: "Другое" },
       budget: "Бюджет", budgetPh: "Выберите бюджет",
       budgetOpts: { b1: "До $300", b2: "$300–500", b3: "$500–800", b4: "$800–1,000", b5: "$1,000+", b6: "Пока не знаю" },
       msg: "Сообщение", msgPh: "Расскажите немного о бизнесе и о том, что вам нужно", optional: "(необязательно)",
@@ -1267,8 +1689,11 @@ const I18N = {
       conceptMsg: "Здравствуйте! Хочу получить бесплатный концепт сайта.",
       planMsg: "Меня интересует тариф «{plan}» ({price}).",
       demoMsg: "Хочу посмотреть демо «{name}».",
+      comMsg: "Здравствуйте! Хочу создать платформу для онлайн-торговли: {type}.",
+      comMsgAny: "Здравствуйте! Хочу обсудить создание интернет-магазина или платформы доставки.",
       tgHeader: "Новая заявка с сайта"
     },
+    com: {"navTitle": "Платформы e-commerce и доставки", "eyebrow": "Цифровая торговля • E-commerce • Логистика", "title": "Ваша следующая большая идея. <span class='grad'>Наши технологии.</span>", "lead": "От интернет-магазинов до маркетплейсов в стиле Amazon и умных платформ доставки — мы создаём цифровую инфраструктуру, которая помогает бизнесу расти.", "cta1": "Создать платформу", "cta2": "Смотреть решения", "demoTag": "Демо", "vis": {"url": "admin.your-store.com", "k1": "Заказы сегодня", "k2": "В доставке", "k3": "Товары", "chart": "Продажи · 7 дней", "product": "Беспроводные наушники", "add": "Добавить", "order": "Заказ №WC-2048", "onway": "В пути", "courier": "Курьер прибудет · 12 мин"}, "sol": {"kicker": "Решения", "title": "Платформы, которые мы создаём", "sub": "Примеры платформ, которые мы проектируем и разрабатываем, — каждая адаптирована под ваш бизнес.", "more": "Подробнее о решении", "items": {"store": {"t": "Интернет-магазины", "d": "Запустите полноценный онлайн-магазин с каталогом товаров, интеграциями безопасной оплаты, управлением складом и личными кабинетами покупателей."}, "market": {"t": "Маркетплейсы", "d": "Масштабируемые торговые площадки в стиле Amazon: поиск товаров, управление продавцами, кабинеты покупателей и обработка заказов."}, "food": {"t": "Доставка еды и продуктов", "d": "Онлайн-заказы для ресторанов, супермаркетов, производителей еды и местных служб доставки."}, "b2b": {"t": "B2B и оптовая торговля", "d": "Профессиональные каталоги, оптовые заказы, индивидуальные цены и управление аккаунтами клиентов."}, "cargo": {"t": "Карго и логистика", "d": "Отслеживание отправлений, складские процессы, управление доставкой и операционные панели."}, "custom": {"t": "Индивидуальные платформы", "d": "Превращаем уникальные бизнес-идеи в цифровые продукты, созданные под ваши задачи."}}}, "feat": {"kicker": "Возможности", "title": "Всё, что нужно вашему цифровому бизнесу.", "std": "Стандарт", "stdNote": "входит в проекты платформ", "opt": "Индивидуальная интеграция", "optNote": "по запросу, оценивается отдельно", "items": {"search": "Умный поиск и фильтры товаров", "cart": "Корзина и оформление заказа", "accounts": "Личные кабинеты и история заказов", "inventory": "Управление товарами, складом и категориями", "admin": "Админ-панель и бизнес-аналитика", "seller": "Кабинеты продавцов для маркетплейсов", "tracking": "Отслеживание доставки и статусы заказов", "payments": "Интеграция платёжных систем (при доступности провайдера)", "i18n": "Несколько языков и валют", "mobile": "Адаптивный дизайн, mobile-first", "seo": "Поисковая оптимизация (SEO)", "notify": "Уведомления (Telegram, SMS, e-mail)", "roles": "Ролевой доступ и безопасность", "ai": "ИИ-рекомендации и поддержка клиентов"}}, "demo": {"kicker": "Интерактивное превью", "title": "Попробуйте мини-магазин", "sub": "Ищите, фильтруйте и добавляйте товары в корзину — так могли бы покупать ваши клиенты.", "note": "Демо с примерными данными. Реальные заказы, оплаты и доставки не выполняются.", "searchLabel": "Поиск товаров", "searchPh": "Поиск товаров…", "cart": "Корзина", "catsLabel": "Категории", "cats": {"all": "Все", "electronics": "Электроника", "fashion": "Одежда и обувь", "home": "Для дома", "grocery": "Продукты"}, "products": {"p1": "Беспроводные наушники", "p2": "Умные часы", "p3": "Беговые кроссовки", "p4": "Городской рюкзак", "p5": "Настольная лампа", "p6": "Набор керамических кружек", "p7": "Кофе арабика в зёрнах", "p8": "Коробка свежих фруктов"}, "rating": "Оценка {r} из 5", "add": "В корзину", "addAria": "Добавить «{name}» в корзину", "inCart": "В корзине · {n}", "cartAria": "Корзина, товаров: {n}", "less": "Убрать одну позицию «{name}»", "more": "Добавить ещё «{name}»", "items": "Товаров: {n}", "total": "Итого", "cartEmpty": "Корзина пуста. Добавьте товар, чтобы попробовать оформление заказа.", "checkout": "Оформить демо-заказ", "emptyT": "Ничего не найдено", "emptyD": "Попробуйте другой запрос или категорию.", "reset": "Показать все товары", "addedLive": "«{name}» добавлен. Товаров в корзине: {n}.", "removedLive": "«{name}» убран. Товаров в корзине: {n}."}, "track": {"title": "Отслеживание заказа", "sample": "Пример", "sim": "Симуляция", "order": "Заказ", "s0": "Оформлен", "s1": "Собран", "s2": "Отправлен", "s3": "Доставлен", "times": ["10:24", "10:41", "11:05", "≈ 11:30"], "placedLive": "Демо-заказ оформлен. Отслеживание запущено."}, "proc": {"kicker": "Наш процесс", "title": "Как мы создаём вашу платформу", "steps": [{"t": "Исследование", "d": "Изучаем вашу бизнес-модель, клиентов, цели и требования."}, {"t": "Дизайн", "d": "Создаём продуманный пользовательский опыт, визуальный стиль и архитектуру платформы."}, {"t": "Разработка", "d": "Реализуем согласованные функции, адаптивные интерфейсы, интеграции и инструменты администрирования."}, {"t": "Запуск и рост", "d": "Тестируем, запускаем, оптимизируем и поддерживаем платформу по согласованному плану обслуживания."}]}, "why": {"kicker": "Почему WEB-CREATORS", "title": "Больше, чем сайт. Цифровой двигатель бизнеса.", "sub": "Мы проектируем каждую платформу вокруг реальных процессов вашего бизнеса — и остаёмся рядом, пока он растёт.", "items": {"custom": {"t": "Индивидуальные решения", "d": "Никаких шаблонов — каждая платформа создаётся под ваш бизнес."}, "ux": {"t": "Современный UX", "d": "Чистые и быстрые интерфейсы, которыми приятно пользоваться."}, "mobile": {"t": "Mobile-first разработка", "d": "Создано для смартфонов, с которых покупают ваши клиенты."}, "scale": {"t": "Масштабируемая архитектура", "d": "Техническая основа по размеру проекта и с запасом для роста."}, "i18n": {"t": "Многоязычность", "d": "Узбекский, русский, английский, турецкий, китайский и другие."}, "business": {"t": "Дизайн для бизнеса", "d": "Каждый экран помогает продавать и обслуживать клиентов."}, "integrations": {"t": "Готовность к интеграциям", "d": "Подключение оплаты, доставки, CRM и мессенджеров."}, "growth": {"t": "Долгосрочное партнёрство", "d": "Развиваем платформу вместе с ростом вашего бизнеса."}}}, "types": {"store": "Интернет-магазин", "market": "Маркетплейс", "food": "Доставка еды", "grocery": "Доставка продуктов", "b2b": "B2B / опт", "cargo": "Карго и логистика", "fashion": "Магазин одежды", "custom": "Другое"}, "final": {"title": "У вас идея больше, чем просто сайт?", "sub": "Давайте превратим ваше видение в мощную цифровую платформу, созданную вокруг вашего бизнеса.", "pick": "Что вы хотите создать?", "cta1": "Обсудить проект", "cta2": "Связаться с WEB-CREATORS"}},
     footer: { tagline: "Мы создаём сайты. Вы развиваете бизнес.", services: "Услуги", contacts: "Контакты", rights: "Все права защищены.", slogan: "Давайте строить будущее вместе!", top: "Наверх ↑" },
     float: "Написать нам в Telegram"
   },
@@ -1282,7 +1707,7 @@ const I18N = {
       ogDesc: "为餐厅、酒店、理发店、超市和服装店打造现代网站与 Telegram 机器人——几天完成，而非几个月。"
     },
     skip: "跳到主要内容",
-    nav: { restaurants: "餐厅", hotels: "酒店", barbers: "理发店", markets: "超市", fashion: "服装", process: "流程", contact: "联系我们", cta: "免费获取概念稿", menu: "打开菜单", close: "关闭菜单", lang: "选择语言" },
+    nav: { restaurants: "餐厅", hotels: "酒店", barbers: "理发店", markets: "超市", fashion: "服装", commerce: "电商平台", process: "流程", contact: "联系我们", cta: "免费获取概念稿", menu: "打开菜单", close: "关闭菜单", lang: "选择语言" },
     hero: {
       badge: "网页设计工作室 · 乌兹别克斯坦",
       title: "让您的生意<span class='grad'>在线上大获成功</span>",
@@ -1349,7 +1774,7 @@ const I18N = {
     contact: {
       kicker: "联系我们", title: "快速报价", sub: "告诉我们您的项目——我们将回复报价和免费概念稿。",
       name: "您的姓名", namePh: "例如：Aziz", phone: "电话", biz: "业务类型", bizPh: "请选择业务类型",
-      bizOpts: { restaurant: "餐厅 / 咖啡馆", hotel: "酒店", barber: "理发店 / 美容院", market: "超市 / 网上商店", clothing: "服装店", other: "其他" },
+      bizOpts: { restaurant: "餐厅 / 咖啡馆", hotel: "酒店", barber: "理发店 / 美容院", market: "超市 / 网上商店", clothing: "服装店", commerce: "电商 / 配送平台", other: "其他" },
       budget: "预算", budgetPh: "请选择预算",
       budgetOpts: { b1: "$300 以内", b2: "$300–500", b3: "$500–800", b4: "$800–1,000", b5: "$1,000 以上", b6: "暂不确定" },
       msg: "留言", msgPh: "简单介绍一下您的业务和需求", optional: "（选填）",
@@ -1362,8 +1787,11 @@ const I18N = {
       conceptMsg: "您好！我想获取我的网站的免费概念稿。",
       planMsg: "我对“{plan}”方案（{price}）感兴趣。",
       demoMsg: "我想查看“{name}”的演示。",
+      comMsg: "您好！我想开发一个数字商务平台：{type}。",
+      comMsgAny: "您好！我想咨询电商或配送平台的开发。",
       tgHeader: "来自网站的新请求"
     },
+    com: {"navTitle": "电商与配送平台", "eyebrow": "数字商务 • 电子商务 • 物流", "title": "您的下一个伟大构想，<span class='grad'>由我们的技术实现。</span>", "lead": "从网上商店到亚马逊式综合电商平台，再到智能配送系统，我们为企业打造助力增长的数字基础设施。", "cta1": "打造您的平台", "cta2": "了解我们的方案", "demoTag": "演示", "vis": {"url": "admin.your-store.com", "k1": "今日订单", "k2": "配送中", "k3": "商品", "chart": "近 7 天销售额", "product": "无线耳机", "add": "加入", "order": "订单 #WC-2048", "onway": "运输中", "courier": "骑手预计 12 分钟送达"}, "sol": {"kicker": "解决方案", "title": "我们打造的平台", "sub": "以下是我们设计和开发的平台类型示例，每一个都根据您的业务量身定制。", "more": "了解方案", "items": {"store": {"t": "电商网店", "d": "上线功能完善的网上商店：商品目录、安全支付集成、库存管理和客户账户。"}, "market": {"t": "综合电商平台", "d": "打造可扩展的亚马逊式购物平台：商品发现、商家管理、客户中心和订单处理。"}, "food": {"t": "餐饮与生鲜配送", "d": "为餐厅、超市、食品企业和本地配送服务打造在线点单与下单体验。"}, "b2b": {"t": "B2B 与批发电商", "d": "通过专业目录、批量订购、定制价格和账户管理连接企业客户。"}, "cargo": {"t": "货运与物流系统", "d": "开发货件追踪、仓储流程、配送管理和运营看板。"}, "custom": {"t": "定制商务平台", "d": "将独特的商业构想转化为围绕您具体需求设计的数字产品。"}}}, "feat": {"kicker": "功能", "title": "数字业务所需，一应俱全。", "std": "标准", "stdNote": "平台项目默认包含", "opt": "定制集成", "optNote": "按需开发，单独报价", "items": {"search": "智能商品搜索与筛选", "cart": "购物车与结账流程", "accounts": "客户账户与订单历史", "inventory": "商品、库存与分类管理", "admin": "管理后台与业务分析", "seller": "多商户平台的商家后台", "tracking": "货件追踪与配送状态", "payments": "支付网关集成（视服务商可用性而定）", "i18n": "多语言与多币种", "mobile": "移动优先的响应式设计", "seo": "搜索引擎优化（SEO）", "notify": "消息通知（Telegram、短信、邮件）", "roles": "基于角色的权限与安全", "ai": "AI 智能推荐与客户服务"}}, "demo": {"kicker": "交互预览", "title": "体验迷你商店", "sub": "搜索、筛选并将商品加入购物车——这就是您的顾客购物的方式。", "note": "演示使用示例数据，不会产生真实订单、付款或配送。", "searchLabel": "搜索商品", "searchPh": "搜索商品…", "cart": "购物车", "catsLabel": "商品分类", "cats": {"all": "全部", "electronics": "数码电子", "fashion": "服饰鞋包", "home": "家居", "grocery": "食品生鲜"}, "products": {"p1": "无线耳机", "p2": "智能手表", "p3": "跑步鞋", "p4": "城市双肩包", "p5": "台灯", "p6": "陶瓷马克杯套装", "p7": "阿拉比卡咖啡豆", "p8": "新鲜水果礼盒"}, "rating": "评分 {r}/5", "add": "加入购物车", "addAria": "将{name}加入购物车", "inCart": "已加入 · {n}", "cartAria": "购物车，共 {n} 件", "less": "减少一件{name}", "more": "再加一件{name}", "items": "共 {n} 件", "total": "合计", "cartEmpty": "购物车是空的。加入商品即可体验结账流程。", "checkout": "提交演示订单", "emptyT": "未找到商品", "emptyD": "请尝试其他关键词或分类。", "reset": "显示全部商品", "addedLive": "已添加{name}。购物车共 {n} 件。", "removedLive": "已移除{name}。购物车共 {n} 件。"}, "track": {"title": "订单追踪", "sample": "示例", "sim": "模拟", "order": "订单", "s0": "已下单", "s1": "已打包", "s2": "已发货", "s3": "已送达", "times": ["10:24", "10:41", "11:05", "≈ 11:30"], "placedLive": "演示订单已提交，开始追踪。"}, "proc": {"kicker": "合作流程", "title": "我们如何打造您的平台", "steps": [{"t": "需求调研", "d": "深入了解您的商业模式、目标客户、业务目标和具体需求。"}, {"t": "设计", "d": "打造精致的用户体验、视觉形象和平台架构。"}, {"t": "开发", "d": "实现约定的功能、响应式界面、系统集成和管理工具。"}, {"t": "上线与增长", "d": "按照约定的服务方案进行测试、部署、优化和维护。"}]}, "why": {"kicker": "为什么选择 WEB-CREATORS", "title": "不只是网站，更是数字业务引擎。", "sub": "我们围绕您业务的真实运作方式设计每一个平台，并在您成长的路上持续相伴。", "items": {"custom": {"t": "量身定制", "d": "拒绝千篇一律的模板，每个平台都为您的业务而设计。"}, "ux": {"t": "现代用户体验", "d": "简洁流畅、让顾客乐于使用的界面。"}, "mobile": {"t": "移动优先开发", "d": "专为顾客购物所用的手机而打造。"}, "scale": {"t": "可扩展架构", "d": "与项目规模相匹配、为增长预留空间的技术基础。"}, "i18n": {"t": "多语言设计", "d": "支持乌兹别克语、俄语、英语、土耳其语、中文等。"}, "business": {"t": "以业务为核心", "d": "每个页面都为销售和服务顾客而设计。"}, "integrations": {"t": "便于集成", "d": "可对接支付、配送、CRM 和即时通讯工具。"}, "growth": {"t": "长期合作", "d": "随着您的业务发展持续完善平台。"}}}, "types": {"store": "网上商店", "market": "综合电商平台", "food": "餐饮外卖", "grocery": "生鲜配送", "b2b": "B2B / 批发", "cargo": "货运与物流", "fashion": "服装店", "custom": "其他"}, "final": {"title": "您的构想不止于一个网站？", "sub": "让我们将您的愿景变为围绕业务打造的强大数字平台。", "pick": "您想打造什么？", "cta1": "洽谈您的项目", "cta2": "联系 WEB-CREATORS"}},
     footer: { tagline: "我们打造网站，您发展事业。", services: "服务", contacts: "联系方式", rights: "版权所有。", slogan: "让我们一起创造未来！", top: "返回顶部 ↑" },
     float: "在 Telegram 上联系我们"
   },
@@ -1377,7 +1805,7 @@ const I18N = {
       ogDesc: "Restoranlar, oteller, berberler, süpermarketler ve giyim mağazaları için modern web siteleri ve Telegram botları — aylarda değil, günler içinde."
     },
     skip: "İçeriğe geç",
-    nav: { restaurants: "Restoranlar", hotels: "Oteller", barbers: "Berberler", markets: "Süpermarketler", fashion: "Moda", process: "Süreç", contact: "İletişim", cta: "Ücretsiz konsept al", menu: "Menüyü aç", close: "Menüyü kapat", lang: "Dil seçin" },
+    nav: { restaurants: "Restoranlar", hotels: "Oteller", barbers: "Berberler", markets: "Süpermarketler", fashion: "Moda", commerce: "E-ticaret", process: "Süreç", contact: "İletişim", cta: "Ücretsiz konsept al", menu: "Menüyü aç", close: "Menüyü kapat", lang: "Dil seçin" },
     hero: {
       badge: "Web tasarım ajansı · Özbekistan",
       title: "İşletmenizi <span class='grad'>çevrimiçi bir başarıya</span> dönüştürün",
@@ -1444,7 +1872,7 @@ const I18N = {
     contact: {
       kicker: "İletişim", title: "Hızlı fiyat teklifi alın", sub: "Bize projenizden bahsedin — fiyat ve ücretsiz bir konseptle dönüş yapalım.",
       name: "Adınız", namePh: "ör. Aziz", phone: "Telefon", biz: "İşletme türü", bizPh: "İşletme türünüzü seçin",
-      bizOpts: { restaurant: "Restoran / kafe", hotel: "Otel", barber: "Berber / güzellik salonu", market: "Süpermarket / online mağaza", clothing: "Giyim mağazası", other: "Diğer" },
+      bizOpts: { restaurant: "Restoran / kafe", hotel: "Otel", barber: "Berber / güzellik salonu", market: "Süpermarket / online mağaza", clothing: "Giyim mağazası", commerce: "E-ticaret / teslimat platformu", other: "Diğer" },
       budget: "Bütçe", budgetPh: "Bütçe seçin",
       budgetOpts: { b1: "$300'a kadar", b2: "$300–500", b3: "$500–800", b4: "$800–1,000", b5: "$1,000+", b6: "Henüz emin değilim" },
       msg: "Mesaj", msgPh: "İşletmenizden ve ihtiyaçlarınızdan kısaca bahsedin", optional: "(isteğe bağlı)",
@@ -1457,8 +1885,11 @@ const I18N = {
       conceptMsg: "Merhaba! Web sitem için ücretsiz bir konsept almak istiyorum.",
       planMsg: "“{plan}” paketiyle ilgileniyorum ({price}).",
       demoMsg: "“{name}” demosunu görmek istiyorum.",
+      comMsg: "Merhaba! Bir dijital ticaret platformu kurmak istiyorum: {type}.",
+      comMsgAny: "Merhaba! Bir e-ticaret veya teslimat platformu kurmayı konuşmak istiyorum.",
       tgHeader: "Web sitesinden yeni talep"
     },
+    com: {"navTitle": "E-Ticaret ve Teslimat Platformları", "eyebrow": "Dijital ticaret • E-ticaret • Lojistik", "title": "Sıradaki Büyük Fikriniz. <span class='grad'>Bizim Teknolojimiz.</span>", "lead": "Online mağazalardan Amazon tarzı pazar yerlerine ve akıllı teslimat platformlarına kadar, işletmelerin büyümesine yardımcı olan dijital altyapıyı kuruyoruz.", "cta1": "Platformunuzu Kurun", "cta2": "Çözümlerimizi Keşfedin", "demoTag": "Demo", "vis": {"url": "admin.your-store.com", "k1": "Bugünkü siparişler", "k2": "Teslimatta", "k3": "Ürünler", "chart": "Satışlar · son 7 gün", "product": "Kablosuz kulaklık", "add": "Ekle", "order": "Sipariş #WC-2048", "onway": "Yolda", "courier": "Kurye geliyor · 12 dk"}, "sol": {"kicker": "Çözümler", "title": "Geliştirdiğimiz platformlar", "sub": "Tasarlayıp geliştirdiğimiz platform türlerinden örnekler — her biri işletmenize göre uyarlanır.", "more": "Çözümü keşfedin", "items": {"store": {"t": "E-Ticaret Mağazaları", "d": "Ürün katalogları, güvenli ödeme entegrasyonları, stok yönetimi ve müşteri hesaplarıyla güçlü bir online mağaza açın."}, "market": {"t": "Pazar Yeri Platformları", "d": "Ürün keşfi, satıcı yönetimi, müşteri panelleri ve sipariş işleme ile ölçeklenebilir Amazon tarzı alışveriş deneyimleri kurun."}, "food": {"t": "Yemek ve Market Teslimatı", "d": "Restoranlar, süpermarketler, gıda işletmeleri ve yerel teslimat hizmetleri için dijital sipariş deneyimleri oluşturun."}, "b2b": {"t": "B2B ve Toptan Ticaret", "d": "Profesyonel kataloglar, toplu sipariş, özel fiyatlandırma ve hesap yönetimiyle işletmeleri birbirine bağlayın."}, "cargo": {"t": "Kargo ve Lojistik Sistemleri", "d": "Gönderi takibi, depo iş akışları, teslimat yönetimi ve operasyon panelleri geliştirin."}, "custom": {"t": "Özel Ticaret Platformları", "d": "Benzersiz iş fikirlerinizi, ihtiyaçlarınıza göre tasarlanmış dijital ürünlere dönüştürün."}}}, "feat": {"kicker": "Özellikler", "title": "Dijital İşletmenizin İhtiyacı Olan Her Şey.", "std": "Standart", "stdNote": "platform projelerine dahil", "opt": "Özel entegrasyon", "optNote": "talep üzerine, ayrıca fiyatlandırılır", "items": {"search": "Akıllı ürün arama ve filtreleme", "cart": "Sepet ve ödeme akışı", "accounts": "Müşteri hesapları ve sipariş geçmişi", "inventory": "Ürün, stok ve kategori yönetimi", "admin": "Yönetim paneli ve iş analitiği", "seller": "Çok satıcılı platformlar için satıcı panelleri", "tracking": "Gönderi takibi ve teslimat durumu", "payments": "Ödeme altyapısı entegrasyonu (sağlayıcı uygunluğuna bağlı)", "i18n": "Çoklu dil ve para birimi", "mobile": "Mobil öncelikli duyarlı tasarım", "seo": "Arama motoru optimizasyonu (SEO)", "notify": "Bildirimler (Telegram, SMS, e-posta)", "roles": "Rol tabanlı erişim ve güvenlik", "ai": "Yapay zekâ destekli öneriler ve müşteri desteği"}}, "demo": {"kicker": "Etkileşimli önizleme", "title": "Mini mağazayı deneyin", "sub": "Ürün arayın, filtreleyin ve sepete ekleyin — müşterileriniz böyle alışveriş yapabilir.", "note": "Örnek verilerle demo. Gerçek sipariş, ödeme veya teslimat yapılmaz.", "searchLabel": "Ürün ara", "searchPh": "Ürün ara…", "cart": "Sepet", "catsLabel": "Kategoriler", "cats": {"all": "Tümü", "electronics": "Elektronik", "fashion": "Moda", "home": "Ev", "grocery": "Market"}, "products": {"p1": "Kablosuz kulaklık", "p2": "Akıllı saat", "p3": "Koşu ayakkabısı", "p4": "Şehir sırt çantası", "p5": "Masa lambası", "p6": "Seramik kupa seti", "p7": "Arabica çekirdek kahve", "p8": "Taze meyve kutusu"}, "rating": "5 üzerinden {r} puan", "add": "Sepete ekle", "addAria": "{name} ürününü sepete ekle", "inCart": "Sepette · {n}", "cartAria": "Sepet, {n} ürün", "less": "{name} ürününden bir adet çıkar", "more": "{name} ürününden bir adet daha ekle", "items": "{n} ürün", "total": "Toplam", "cartEmpty": "Sepetiniz boş. Ödeme adımını denemek için bir ürün ekleyin.", "checkout": "Demo sipariş ver", "emptyT": "Sonuç bulunamadı", "emptyD": "Başka bir arama veya kategori deneyin.", "reset": "Tüm ürünleri göster", "addedLive": "{name} eklendi. Sepetteki ürün: {n}.", "removedLive": "{name} çıkarıldı. Sepetteki ürün: {n}."}, "track": {"title": "Sipariş takibi", "sample": "Örnek", "sim": "Simülasyon", "order": "Sipariş", "s0": "Alındı", "s1": "Paketlendi", "s2": "Kargoda", "s3": "Teslim edildi", "times": ["10:24", "10:41", "11:05", "≈ 11:30"], "placedLive": "Demo sipariş verildi. Takip başladı."}, "proc": {"kicker": "Sürecimiz", "title": "Platformunuzu nasıl kuruyoruz", "steps": [{"t": "Keşif", "d": "İş modelinizi, müşterilerinizi, hedeflerinizi ve ihtiyaçlarınızı anlıyoruz."}, {"t": "Tasarım", "d": "Özenli bir kullanıcı deneyimi, görsel kimlik ve platform mimarisi oluşturuyoruz."}, {"t": "Geliştirme", "d": "Kararlaştırılan özellikleri, duyarlı arayüzleri, entegrasyonları ve yönetim araçlarını geliştiriyoruz."}, {"t": "Yayın ve Büyüme", "d": "Platformu kararlaştırılan hizmet planına göre test ediyor, yayına alıyor, optimize ediyor ve destekliyoruz."}]}, "why": {"kicker": "Neden WEB-CREATORS", "title": "Bir Web Sitesinden Fazlası. Dijital Bir İş Motoru.", "sub": "Her platformu işletmenizin gerçek işleyişine göre tasarlıyor ve büyüdükçe yanınızda kalıyoruz.", "items": {"custom": {"t": "Size özel çözümler", "d": "Hazır şablon yok — her platform işletmenize göre tasarlanır."}, "ux": {"t": "Modern kullanıcı deneyimi", "d": "Müşterilerinizin kullanmaktan keyif aldığı sade ve hızlı arayüzler."}, "mobile": {"t": "Mobil öncelikli geliştirme", "d": "Müşterilerinizin alışveriş yaptığı telefonlar için tasarlandı."}, "scale": {"t": "Ölçeklenebilir mimari", "d": "Projenize uygun ve büyümeye hazır teknik altyapı."}, "i18n": {"t": "Çok dilli yapı", "d": "Özbekçe, Rusça, İngilizce, Türkçe, Çince ve daha fazlası."}, "business": {"t": "İş odaklı tasarım", "d": "Her ekran satış yapmanıza ve müşterilerinize hizmet etmenize yardımcı olur."}, "integrations": {"t": "Entegrasyona hazır", "d": "Ödeme, teslimat, CRM ve mesajlaşma uygulamalarına bağlanabilir."}, "growth": {"t": "Uzun vadeli iş birliği", "d": "İşletmeniz büyüdükçe platformunuzu geliştirmeye devam ediyoruz."}}}, "types": {"store": "Online mağaza", "market": "Pazar yeri", "food": "Yemek teslimatı", "grocery": "Market teslimatı", "b2b": "B2B / toptan", "cargo": "Kargo ve lojistik", "fashion": "Giyim mağazası", "custom": "Başka bir şey"}, "final": {"title": "Fikriniz Bir Web Sitesinden Daha mı Büyük?", "sub": "Vizyonunuzu, işletmeniz etrafında kurulmuş güçlü bir dijital platforma dönüştürelim.", "pick": "Ne kurmak istiyorsunuz?", "cta1": "Projenizi Konuşalım", "cta2": "WEB-CREATORS ile İletişim"}},
     footer: { tagline: "Biz web siteleri yaparız. Siz işinizi büyütürsünüz.", services: "Hizmetler", contacts: "İletişim", rights: "Tüm hakları saklıdır.", slogan: "Geleceği birlikte inşa edelim!", top: "Başa dön ↑" },
     float: "Bize Telegram'dan yazın"
   },
@@ -1472,7 +1903,7 @@ const I18N = {
       ogDesc: "Restoranlar, mehmonxonalar, sartaroshxonalar, supermarketlar va kiyim doʻkonlari uchun zamonaviy saytlar va Telegram-botlar — oylab emas, bir necha kunda."
     },
     skip: "Asosiy mazmunga oʻtish",
-    nav: { restaurants: "Restoranlar", hotels: "Mehmonxonalar", barbers: "Sartaroshxonalar", markets: "Supermarketlar", fashion: "Kiyim", process: "Jarayon", contact: "Aloqa", cta: "Bepul konsept olish", menu: "Menyuni ochish", close: "Menyuni yopish", lang: "Tilni tanlang" },
+    nav: { restaurants: "Restoranlar", hotels: "Mehmonxonalar", barbers: "Sartaroshxonalar", markets: "Supermarketlar", fashion: "Kiyim", commerce: "E-tijorat", process: "Jarayon", contact: "Aloqa", cta: "Bepul konsept olish", menu: "Menyuni ochish", close: "Menyuni yopish", lang: "Tilni tanlang" },
     hero: {
       badge: "Veb-dizayn agentligi · Oʻzbekiston",
       title: "Biznesingizni <span class='grad'>onlayn muvaffaqiyatga</span> aylantiring",
@@ -1539,7 +1970,7 @@ const I18N = {
     contact: {
       kicker: "Aloqa", title: "Tezkor narx hisob-kitobi", sub: "Loyihangiz haqida aytib bering — narx va bepul konsept bilan javob beramiz.",
       name: "Ismingiz", namePh: "masalan, Aziz", phone: "Telefon", biz: "Biznes turi", bizPh: "Biznes turini tanlang",
-      bizOpts: { restaurant: "Restoran / kafe", hotel: "Mehmonxona", barber: "Sartaroshxona / goʻzallik saloni", market: "Supermarket / onlayn doʻkon", clothing: "Kiyim doʻkoni", other: "Boshqa" },
+      bizOpts: { restaurant: "Restoran / kafe", hotel: "Mehmonxona", barber: "Sartaroshxona / goʻzallik saloni", market: "Supermarket / onlayn doʻkon", clothing: "Kiyim doʻkoni", commerce: "Onlayn doʻkon / yetkazib berish platformasi", other: "Boshqa" },
       budget: "Byudjet", budgetPh: "Byudjetni tanlang",
       budgetOpts: { b1: "$300 gacha", b2: "$300–500", b3: "$500–800", b4: "$800–1,000", b5: "$1,000+", b6: "Hali aniq emas" },
       msg: "Xabar", msgPh: "Biznesingiz va sizga nima kerakligi haqida qisqacha yozing", optional: "(ixtiyoriy)",
@@ -1552,8 +1983,11 @@ const I18N = {
       conceptMsg: "Assalomu alaykum! Saytim uchun bepul konsept olmoqchiman.",
       planMsg: "Meni “{plan}” tarifi ({price}) qiziqtiradi.",
       demoMsg: "“{name}” demosini koʻrmoqchiman.",
+      comMsg: "Assalomu alaykum! Raqamli savdo platformasi yaratmoqchiman: {type}.",
+      comMsgAny: "Assalomu alaykum! Onlayn doʻkon yoki yetkazib berish platformasi yaratishni muhokama qilmoqchiman.",
       tgHeader: "Saytdan yangi soʻrov"
     },
+    com: {"navTitle": "E-tijorat va yetkazib berish platformalari", "eyebrow": "Raqamli savdo • E-tijorat • Logistika", "title": "Sizning navbatdagi katta gʻoyangiz. <span class='grad'>Bizning texnologiyamiz.</span>", "lead": "Onlayn doʻkonlardan Amazon uslubidagi marketpleyslar va aqlli yetkazib berish platformalarigacha — biznesning oʻsishiga yordam beradigan raqamli infratuzilmani yaratamiz.", "cta1": "Platformangizni yarating", "cta2": "Yechimlarimiz bilan tanishing", "demoTag": "Demo", "vis": {"url": "admin.your-store.com", "k1": "Bugungi buyurtmalar", "k2": "Yetkazilmoqda", "k3": "Mahsulotlar", "chart": "Savdo · soʻnggi 7 kun", "product": "Simsiz quloqchin", "add": "Qoʻshish", "order": "Buyurtma #WC-2048", "onway": "Yoʻlda", "courier": "Kuryer keladi · 12 daq"}, "sol": {"kicker": "Yechimlar", "title": "Biz yaratadigan platformalar", "sub": "Biz loyihalab ishlab chiqadigan platforma turlariga misollar — har biri biznesingizga moslashtiriladi.", "more": "Batafsil", "items": {"store": {"t": "Onlayn doʻkonlar", "d": "Mahsulot katalogi, xavfsiz toʻlov integratsiyalari, ombor boshqaruvi va mijoz kabinetlari bilan kuchli onlayn doʻkon oching."}, "market": {"t": "Marketpleys platformalari", "d": "Mahsulot qidiruvi, sotuvchilarni boshqarish, mijoz kabinetlari va buyurtmalarni qayta ishlash bilan Amazon uslubidagi kengaytiriladigan savdo maydonlari."}, "food": {"t": "Ovqat va oziq-ovqat yetkazish", "d": "Restoranlar, supermarketlar, oziq-ovqat bizneslari va mahalliy yetkazib berish xizmatlari uchun onlayn buyurtma tizimlari."}, "b2b": {"t": "B2B va ulgurji savdo", "d": "Professional kataloglar, ulgurji buyurtmalar, individual narxlar va hisoblarni boshqarish orqali bizneslarni bogʻlang."}, "cargo": {"t": "Kargo va logistika tizimlari", "d": "Joʻnatmalarni kuzatish, ombor jarayonlari, yetkazib berishni boshqarish va operatsion panellar."}, "custom": {"t": "Individual savdo platformalari", "d": "Noyob biznes gʻoyalaringizni aynan sizning talablaringizga moslab yaratilgan raqamli mahsulotlarga aylantiramiz."}}}, "feat": {"kicker": "Imkoniyatlar", "title": "Raqamli biznesingizga kerak boʻlgan hamma narsa.", "std": "Standart", "stdNote": "platforma loyihalariga kiradi", "opt": "Individual integratsiya", "optNote": "soʻrov boʻyicha, alohida baholanadi", "items": {"search": "Aqlli mahsulot qidiruvi va filtrlar", "cart": "Savat va buyurtmani rasmiylashtirish", "accounts": "Mijoz kabinetlari va buyurtmalar tarixi", "inventory": "Mahsulot, ombor va kategoriyalarni boshqarish", "admin": "Admin panel va biznes tahlili", "seller": "Marketpleyslar uchun sotuvchi kabinetlari", "tracking": "Joʻnatmani kuzatish va yetkazish holati", "payments": "Toʻlov tizimlari integratsiyasi (provayder mavjudligiga qarab)", "i18n": "Bir nechta til va valyuta", "mobile": "Mobil qurilmalarga moslashgan dizayn", "seo": "Qidiruv tizimlari uchun optimallashtirish (SEO)", "notify": "Bildirishnomalar (Telegram, SMS, e-mail)", "roles": "Rollarga asoslangan kirish va xavfsizlik", "ai": "Sunʼiy intellekt tavsiyalari va mijozlarni qoʻllab-quvvatlash"}}, "demo": {"kicker": "Interaktiv namoyish", "title": "Mini doʻkonni sinab koʻring", "sub": "Mahsulotlarni qidiring, saralang va savatga qoʻshing — mijozlaringiz aynan shunday xarid qilishi mumkin.", "note": "Namuna maʼlumotlar bilan demo. Haqiqiy buyurtma, toʻlov yoki yetkazib berish amalga oshirilmaydi.", "searchLabel": "Mahsulot qidirish", "searchPh": "Mahsulot qidirish…", "cart": "Savat", "catsLabel": "Kategoriyalar", "cats": {"all": "Barchasi", "electronics": "Elektronika", "fashion": "Kiyim-kechak", "home": "Uy uchun", "grocery": "Oziq-ovqat"}, "products": {"p1": "Simsiz quloqchin", "p2": "Aqlli soat", "p3": "Yugurish krossovkasi", "p4": "Shahar ryukzagi", "p5": "Stol chirogʻi", "p6": "Keramik krujkalar toʻplami", "p7": "Arabika qahva donlari", "p8": "Yangi mevalar qutisi"}, "rating": "Reyting: 5 dan {r}", "add": "Savatga", "addAria": "{name} — savatga qoʻshish", "inCart": "Savatda · {n}", "cartAria": "Savat, {n} ta mahsulot", "less": "{name} — bittaga kamaytirish", "more": "{name} — yana bitta qoʻshish", "items": "{n} ta mahsulot", "total": "Jami", "cartEmpty": "Savat boʻsh. Buyurtmani sinab koʻrish uchun mahsulot qoʻshing.", "checkout": "Demo buyurtma berish", "emptyT": "Hech narsa topilmadi", "emptyD": "Boshqa soʻz yoki kategoriyani sinab koʻring.", "reset": "Barcha mahsulotlarni koʻrsatish", "addedLive": "{name} qoʻshildi. Savatda: {n} ta.", "removedLive": "{name} olib tashlandi. Savatda: {n} ta."}, "track": {"title": "Buyurtmani kuzatish", "sample": "Namuna", "sim": "Simulyatsiya", "order": "Buyurtma", "s0": "Qabul qilindi", "s1": "Qadoqlandi", "s2": "Joʻnatildi", "s3": "Yetkazildi", "times": ["10:24", "10:41", "11:05", "≈ 11:30"], "placedLive": "Demo buyurtma berildi. Kuzatish boshlandi."}, "proc": {"kicker": "Ish jarayonimiz", "title": "Platformangizni qanday yaratamiz", "steps": [{"t": "Oʻrganish", "d": "Biznes modelingiz, mijozlaringiz, maqsadlaringiz va talablaringizni oʻrganamiz."}, {"t": "Dizayn", "d": "Puxta oʻylangan foydalanuvchi tajribasi, vizual uslub va platforma arxitekturasini yaratamiz."}, {"t": "Ishlab chiqish", "d": "Kelishilgan funksiyalar, moslashuvchan interfeyslar, integratsiyalar va boshqaruv vositalarini yaratamiz."}, {"t": "Ishga tushirish va oʻsish", "d": "Platformani kelishilgan xizmat rejasi asosida sinovdan oʻtkazamiz, ishga tushiramiz, optimallashtiramiz va qoʻllab-quvvatlaymiz."}]}, "why": {"kicker": "Nega WEB-CREATORS", "title": "Shunchaki sayt emas. Raqamli biznes dvigateli.", "sub": "Har bir platformani biznesingiz haqiqatda qanday ishlashiga qarab loyihalaymiz va u oʻsgani sari yoningizda boʻlamiz.", "items": {"custom": {"t": "Individual yechimlar", "d": "Tayyor shablonlar yoʻq — har bir platforma biznesingiz uchun yaratiladi."}, "ux": {"t": "Zamonaviy foydalanuvchi tajribasi", "d": "Mijozlaringiz foydalanishdan zavqlanadigan toza va tezkor interfeyslar."}, "mobile": {"t": "Mobil qurilmalar birinchi oʻrinda", "d": "Mijozlaringiz xarid qiladigan telefonlar uchun yaratilgan."}, "scale": {"t": "Kengaytiriladigan arxitektura", "d": "Loyihangiz hajmiga mos va oʻsishga tayyor texnik asos."}, "i18n": {"t": "Koʻp tilli tuzilma", "d": "Oʻzbek, rus, ingliz, turk, xitoy va boshqa tillar."}, "business": {"t": "Biznesga yoʻnaltirilgan dizayn", "d": "Har bir sahifa sotish va mijozlarga xizmat koʻrsatishga yordam beradi."}, "integrations": {"t": "Integratsiyaga tayyor", "d": "Toʻlov, yetkazib berish, CRM va messenjerlarni ulash mumkin."}, "growth": {"t": "Uzoq muddatli hamkorlik", "d": "Biznesingiz oʻsgani sari platformangizni rivojlantirib boramiz."}}}, "types": {"store": "Onlayn doʻkon", "market": "Marketpleys", "food": "Ovqat yetkazish", "grocery": "Oziq-ovqat yetkazish", "b2b": "B2B / ulgurji", "cargo": "Kargo va logistika", "fashion": "Kiyim doʻkoni", "custom": "Boshqa narsa"}, "final": {"title": "Gʻoyangiz oddiy saytdan kattaroqmi?", "sub": "Keling, gʻoyangizni biznesingiz atrofida qurilgan kuchli raqamli platformaga aylantiramiz.", "pick": "Nima yaratmoqchisiz?", "cta1": "Loyihani muhokama qilish", "cta2": "WEB-CREATORS bilan bogʻlanish"}},
     footer: { tagline: "Biz sayt yaratamiz. Siz biznesingizni rivojlantirasiz.", services: "Xizmatlar", contacts: "Kontaktlar", rights: "Barcha huquqlar himoyalangan.", slogan: "Kelajakni birga quramiz!", top: "Yuqoriga ↑" },
     float: "Bizga Telegramda yozing"
   }
@@ -1720,6 +2154,190 @@ const I18N = {
       </details>`).join("");
   }
 
+  /* ---------- e-commerce section ---------- */
+  const svgI = (paths, vb = 24, sw = 2) => `<svg viewBox="0 0 ${vb} ${vb}" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+  // decorative illustration for each solution card (320×150)
+  const SOL_ART = {
+    store: '<g transform="translate(150 26)"><rect width="150" height="100" rx="10" fill="#0E1A36" stroke="#2A4E9A"/><rect x="12" y="14" width="38" height="30" rx="5" fill="#1E6BFF" opacity=".55"/><rect x="56" y="14" width="38" height="30" rx="5" fill="#62A4FF" opacity=".35"/><rect x="100" y="14" width="38" height="30" rx="5" fill="#1E6BFF" opacity=".35"/><rect x="12" y="52" width="26" height="5" rx="2.5" fill="#fff" opacity=".35"/><rect x="56" y="52" width="26" height="5" rx="2.5" fill="#fff" opacity=".35"/><rect x="100" y="52" width="26" height="5" rx="2.5" fill="#fff" opacity=".35"/><rect x="12" y="74" width="60" height="14" rx="7" fill="#1E6BFF"/></g>',
+    market: '<g transform="translate(140 22)" fill="#0E1A36" stroke="#2A4E9A"><rect width="72" height="52" rx="8"/><rect x="84" width="72" height="52" rx="8"/><rect y="62" width="72" height="44" rx="8"/><rect x="84" y="62" width="72" height="44" rx="8"/><g stroke="none"><circle cx="16" cy="16" r="7" fill="#1E6BFF"/><circle cx="100" cy="16" r="7" fill="#62A4FF"/><circle cx="16" cy="76" r="7" fill="#62A4FF" opacity=".7"/><circle cx="100" cy="76" r="7" fill="#1E6BFF"/><rect x="30" y="13" width="30" height="5" rx="2.5" fill="#fff" opacity=".3"/><rect x="114" y="13" width="30" height="5" rx="2.5" fill="#fff" opacity=".3"/><rect x="30" y="73" width="30" height="5" rx="2.5" fill="#fff" opacity=".3"/><rect x="114" y="73" width="30" height="5" rx="2.5" fill="#fff" opacity=".3"/></g></g>',
+    food: '<g transform="translate(150 20)"><path d="M10 96 C 50 40, 100 120, 150 30" fill="none" stroke="#62A4FF" stroke-width="2" stroke-dasharray="5 6" opacity=".7"/><circle cx="10" cy="96" r="7" fill="#1E6BFF"/><circle cx="150" cy="30" r="9" fill="#3DDC97" opacity=".9"/><rect x="60" y="54" width="66" height="34" rx="10" fill="#0E1A36" stroke="#2A4E9A"/><rect x="70" y="64" width="34" height="5" rx="2.5" fill="#fff" opacity=".4"/><rect x="70" y="74" width="22" height="5" rx="2.5" fill="#62A4FF"/></g>',
+    b2b: '<g transform="translate(160 18)" stroke="#2A4E9A"><rect x="0" y="62" width="44" height="44" rx="5" fill="#0E1A36"/><rect x="50" y="62" width="44" height="44" rx="5" fill="#122247"/><rect x="100" y="62" width="44" height="44" rx="5" fill="#0E1A36"/><rect x="25" y="14" width="44" height="44" rx="5" fill="#173068"/><rect x="75" y="14" width="44" height="44" rx="5" fill="#0E1A36"/><path d="M0 84h44M50 84h44M100 84h44M25 36h44M75 36h44" stroke="#62A4FF" opacity=".5"/></g>',
+    cargo: '<g transform="translate(140 18)"><rect width="164" height="112" rx="12" fill="#0B1530" stroke="#2A4E9A"/><path d="M0 40h164M0 76h164M54 0v112M110 0v112" stroke="#1A2C55"/><path d="M24 92 L 70 58 L 104 70 L 142 24" fill="none" stroke="#1E6BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="92" r="6" fill="#62A4FF"/><circle cx="104" cy="70" r="5" fill="#fff" opacity=".8"/><circle cx="142" cy="24" r="8" fill="#3DDC97"/></g>',
+    custom: '<g transform="translate(150 22)" font-family="ui-monospace,Menlo,monospace" font-size="13"><rect width="152" height="104" rx="10" fill="#0B1530" stroke="#2A4E9A"/><text x="14" y="28" fill="#62A4FF">&lt;Platform</text><text x="28" y="48" fill="#A7B5C8">idea=<tspan fill="#E2BE63">"yours"</tspan></text><text x="28" y="68" fill="#A7B5C8">built=<tspan fill="#3DDC97">{true}</tspan></text><text x="14" y="88" fill="#62A4FF">/&gt;</text></g>'
+  };
+
+  const money = (v) => {
+    try { return new Intl.NumberFormat(LANGS[lang].html, { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(v); }
+    catch (e) { return "$" + v; }
+  };
+  const shop = { cat: "all", q: "", cart: {}, order: null, timer: 0 };
+
+  function renderCommerce() {
+    $("#com-sol-grid").innerHTML = COMMERCE.solutions.map((s, i) => `
+      <article class="sol glass lift st" style="--i:${i}">
+        <div class="sol-vis" aria-hidden="true">
+          <svg viewBox="0 0 320 150" preserveAspectRatio="xMaxYMid slice">${SOL_ART[s.id]}</svg>
+          <span class="sol-ico">${svgI(s.icon)}</span>
+        </div>
+        <div class="sol-body">
+          <h4>${esc(t("com.sol.items." + s.id + ".t"))}</h4>
+          <p>${esc(t("com.sol.items." + s.id + ".d"))}</p>
+          <a class="live-link" href="#contact" data-biz="commerce" data-commerce="${s.type}">${esc(t("com.sol.more"))} →<span class="sr-only"> ${esc(t("com.sol.items." + s.id + ".t"))}</span></a>
+        </div>
+      </article>`).join("");
+
+    $("#com-feat-grid").innerHTML = COMMERCE.features.map(([k, kind, ico], i) => `
+      <li class="feat glass st ${kind}" style="--i:${i % 6}">
+        <span class="feat-ico">${svgI(ico, 24, 1.8)}</span>
+        <span><b>${esc(t("com.feat.items." + k))}</b><span class="fb ${kind}">${esc(t("com.feat." + kind))}</span></span>
+      </li>`).join("");
+
+    $("#com-steps").innerHTML = t("com.proc.steps").map((s, i) => `
+      <li class="cstep glass st" style="--i:${i}">
+        <span class="cstep-num" aria-hidden="true">0${i + 1}</span>
+        <h4><span class="sr-only">${i + 1}. </span>${esc(s.t)}</h4>
+        <p>${esc(s.d)}</p>
+      </li>`).join("");
+
+    $("#com-why-grid").innerHTML = COMMERCE.why.map((k, i) => `
+      <li class="why glass st" style="--i:${i}">
+        <span class="why-ico">${svgI('<path d="M5 12.5l4.5 4.5L19 7.5"/>', 24, 2.4)}</span>
+        <span><b>${esc(t("com.why.items." + k + ".t"))}</b><p>${esc(t("com.why.items." + k + ".d"))}</p></span>
+      </li>`).join("");
+
+    const picked = ($('#com-types input:checked') || {}).value || "";
+    $("#com-types").innerHTML = COMMERCE.types.map((k) => `
+      <label><input type="radio" name="com-type" value="${k}"${k === picked ? " checked" : ""}><span>${esc(t("com.types." + k))}</span></label>`).join("");
+
+    $("#shop-cats").innerHTML = COMMERCE.cats.map((c) => `
+      <button type="button" data-cat="${c}" aria-pressed="${c === shop.cat}">${esc(t("com.demo.cats." + c))}</button>`).join("");
+    renderShop();
+    renderCart();
+    renderTrack();
+  }
+
+  function renderShop() {
+    const q = shop.q.trim().toLowerCase();
+    const list = COMMERCE.products.filter((p) => {
+      if (shop.cat !== "all" && p.cat !== shop.cat) return false;
+      if (!q) return true;
+      // search in the current language and in English
+      return [t("com.demo.products." + p.id), lookup(I18N.en, "com.demo.products." + p.id), t("com.demo.cats." + p.cat)]
+        .some((s) => String(s).toLowerCase().includes(q));
+    });
+    const grid = $("#shop-grid");
+    if (!list.length) {
+      grid.innerHTML = `<div class="shop-empty"><b>${esc(t("com.demo.emptyT"))}</b>${esc(t("com.demo.emptyD"))}<br><button type="button" class="btn btn-ghost btn-sm" data-shop-reset>${esc(t("com.demo.reset"))}</button></div>`;
+      return;
+    }
+    grid.innerHTML = list.map((p) => {
+      const name = t("com.demo.products." + p.id);
+      const inCart = shop.cart[p.id];
+      return `
+      <article class="prod">
+        <div class="prod-img" style="--h:${p.hue}" aria-hidden="true">${svgI(p.icon, 48, 2.2)}</div>
+        <div class="prod-body">
+          <span class="prod-cat">${esc(t("com.demo.cats." + p.cat))}</span>
+          <h5>${esc(name)}</h5>
+          <span class="prod-rate" aria-label="${esc(fmt(t("com.demo.rating"), { r: p.rating }))}">★★★★★<span>${p.rating} (${p.reviews})</span></span>
+          <div class="prod-foot">
+            <span class="prod-price">${esc(money(p.price))}</span>
+            <button type="button" class="prod-add${inCart ? " added" : ""}" data-add="${p.id}" aria-label="${esc(fmt(t("com.demo.addAria"), { name }))}">
+              ${svgI(inCart ? '<path d="M5 12.5l4.5 4.5L19 7.5"/>' : '<path d="M12 5v14M5 12h14"/>', 24, 2.4)}
+              <span>${esc(inCart ? fmt(t("com.demo.inCart"), { n: inCart }) : t("com.demo.add"))}</span>
+            </button>
+          </div>
+        </div>
+      </article>`;
+    }).join("");
+  }
+
+  function cartStats() {
+    let n = 0, sum = 0;
+    Object.entries(shop.cart).forEach(([id, q]) => { const p = COMMERCE.products.find((x) => x.id === id); n += q; sum += p.price * q; });
+    return { n, sum };
+  }
+
+  function renderCart() {
+    const { n, sum } = cartStats();
+    $("#shop-count").textContent = n;
+    $("#shop-cart-btn").setAttribute("aria-label", fmt(t("com.demo.cartAria"), { n }));
+    const items = Object.entries(shop.cart).map(([id, q]) => {
+      const p = COMMERCE.products.find((x) => x.id === id), name = t("com.demo.products." + id);
+      return `<li class="cart-item"><span class="ci-name">${esc(name)}</span>
+        <span class="ci-qty"><button type="button" data-dec="${id}" aria-label="${esc(fmt(t("com.demo.less"), { name }))}">−</button><span>${q}</span><button type="button" data-add="${id}" aria-label="${esc(fmt(t("com.demo.more"), { name }))}">+</button></span>
+        <span class="ci-sum">${esc(money(p.price * q))}</span></li>`;
+    }).join("");
+    $("#shop-cart-panel").innerHTML = `
+      <h4 id="shop-side-title">${esc(t("com.demo.cart"))} <small>${esc(fmt(t("com.demo.items"), { n }))}</small></h4>
+      ${n ? `<ul class="cart-list">${items}</ul>
+        <div class="cart-total"><span>${esc(t("com.demo.total"))}</span><strong>${esc(money(sum))}</strong></div>`
+        : `<p class="cart-empty">${esc(t("com.demo.cartEmpty"))}</p>`}
+      <button type="button" class="btn btn-primary" id="shop-checkout"${n ? "" : " disabled"}>${esc(t("com.demo.checkout"))}</button>`;
+  }
+
+  function renderTrack() {
+    const o = shop.order;
+    const step = o ? o.step : 2;
+    const times = t("com.track.times");
+    $("#shop-track").innerHTML = `
+      <h4>${esc(t("com.track.title"))} <span class="track-tag">${esc(o ? t("com.track.sim") : t("com.track.sample"))}</span></h4>
+      <p class="track-id"><span>${esc(t("com.track.order"))} <b>#${esc(o ? o.id : "WC-2048")}</b></span><span>${esc(fmt(t("com.demo.items"), { n: o ? o.n : 3 }))}</span></p>
+      <ol class="track-steps" style="list-style:none;margin:0;padding:0">
+        ${[0, 1, 2, 3].map((i) => `<li class="${i < step ? "done" : i === step ? "now" : ""}"${i === step ? ' aria-current="step"' : ""}>${esc(t("com.track.s" + i))}${i <= step ? `<span>${esc(times[i])}</span>` : ""}</li>`).join("")}
+      </ol>`;
+  }
+
+  function addToCart(id, delta) {
+    const q = (shop.cart[id] || 0) + delta;
+    if (q <= 0) delete shop.cart[id]; else shop.cart[id] = Math.min(q, 99);
+    renderShop(); renderCart();
+    const c = $("#shop-count");
+    c.classList.remove("bump"); void c.offsetWidth; c.classList.add("bump");
+    $("#shop-live").textContent = fmt(t(delta > 0 ? "com.demo.addedLive" : "com.demo.removedLive"), { name: t("com.demo.products." + id), n: cartStats().n });
+  }
+
+  function placeOrder() {
+    const { n } = cartStats();
+    if (!n) return;
+    clearInterval(shop.timer);
+    shop.order = { id: "WC-" + (1000 + Math.floor(Math.random() * 9000)), step: 0, n };
+    shop.cart = {};
+    renderShop(); renderCart(); renderTrack();
+    $("#shop-live").textContent = t("com.track.placedLive");
+    shop.timer = setInterval(() => {
+      shop.order.step++;
+      renderTrack();
+      if (shop.order.step >= 3) { clearInterval(shop.timer); $("#shop-live").textContent = t("com.track.s3"); }
+    }, reduceMotion ? 2500 : 1800);
+  }
+
+  function initCommerce() {
+    const sec = $("#commerce");
+    $("#shop-q").addEventListener("input", (e) => { shop.q = e.target.value; renderShop(); });
+    sec.addEventListener("click", (e) => {
+      const cat = e.target.closest("[data-cat]");
+      if (cat) { shop.cat = cat.dataset.cat; $$("#shop-cats button").forEach((b) => b.setAttribute("aria-pressed", String(b === cat))); renderShop(); return; }
+      const add = e.target.closest("[data-add]");
+      if (add) { const focusId = add.closest(".ci-qty") ? null : add.dataset.add; addToCart(add.dataset.add, 1); if (focusId) { const b = $(`#shop-grid [data-add="${focusId}"]`); if (b) b.focus(); } return; }
+      const dec = e.target.closest("[data-dec]");
+      if (dec) { addToCart(dec.dataset.dec, -1); return; }
+      if (e.target.closest("[data-shop-reset]")) { shop.q = ""; shop.cat = "all"; $("#shop-q").value = ""; renderCommerce(); $("#shop-q").focus(); return; }
+      if (e.target.closest("#shop-checkout")) { placeOrder(); return; }
+      if (e.target.closest("#shop-cart-btn")) { $("#shop-side").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" }); const b = $("#shop-checkout"); if (b && !b.disabled) b.focus(); }
+    });
+    // subtle magnetic pull on primary CTAs (mouse only)
+    if (!reduceMotion && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+      $$(".magnetic").forEach((b) => {
+        b.addEventListener("pointermove", (e) => {
+          const r = b.getBoundingClientRect();
+          b.style.transform = `translate(${((e.clientX - r.left) / r.width - 0.5) * 10}px, ${((e.clientY - r.top) / r.height - 0.5) * 8 - 2}px)`;
+        });
+        b.addEventListener("pointerleave", () => { b.style.transform = ""; });
+      });
+    }
+  }
+
   function renderSelects() {
     const biz = $("#f-biz"), bud = $("#f-budget");
     const bv = biz.value, uv = bud.value;
@@ -1775,6 +2393,7 @@ const I18N = {
     renderAddons();
     renderProcess();
     renderFaq();
+    renderCommerce();
     renderSelects();
     renderLangMenu();
     renderResult();
@@ -1941,6 +2560,12 @@ const I18N = {
       if (a.dataset.plan) text = fmt(t("contact.planMsg"), { plan: a.dataset.plan, price: a.dataset.price });
       else if (a.dataset.demo) text = fmt(t("contact.demoMsg"), { name: a.dataset.demo });
       else if (a.dataset.prefill === "concept") text = t("contact.conceptMsg");
+      else if (a.dataset.commerce) {
+        // e-commerce CTAs: use the platform type from the card, or the one picked in the final CTA
+        let type = a.dataset.commerce;
+        if (type === "final") type = ($('#com-types input:checked') || {}).value || "";
+        text = COMMERCE.types.includes(type) ? fmt(t("contact.comMsg"), { type: t("com.types." + type) }) : t("contact.comMsgAny");
+      }
       if (text && canWrite) { msg.value = text; msg.dataset.auto = text; }
       if (a.dataset.biz) $("#f-biz").value = a.dataset.biz;
       if (formResultState) resetForm();
@@ -2075,6 +2700,7 @@ const I18N = {
   initReveal();
   initParticles();
   initFaq();
+  initCommerce();
   initPrefill();
   initForm();
 })();

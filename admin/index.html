@@ -424,7 +424,7 @@ const I18N = {
     chart30: "Orders · last 30 days", byBiz: "By business type", recent: "Latest orders", viewAll: "View all →",
     st: { new: "New", contacted: "Contacted", inProgress: "In progress", done: "Completed", cancelled: "Cancelled" },
     all: "All", allBiz: "All business types",
-    biz: { restaurant: "Restaurant / cafe", hotel: "Hotel", barber: "Barbershop / beauty", market: "Supermarket / store", clothing: "Clothing store", other: "Other" },
+    biz: { restaurant: "Restaurant / cafe", hotel: "Hotel", barber: "Barbershop / beauty", market: "Supermarket / store", clothing: "Clothing store", commerce: "E-commerce / delivery platform", other: "Other" },
     colClient: "Client", colBiz: "Business", colBudget: "Budget", colMsg: "Message", colStatus: "Status", colDate: "Date",
     emptyTitle: "No orders yet", emptyText: "New requests from your website will appear here instantly.", noMatch: "Nothing matches your filters.",
     call: "Call", telegram: "Telegram", whatsapp: "WhatsApp", copy: "Copy", copied: "Phone number copied",
@@ -449,7 +449,7 @@ const I18N = {
     chart30: "Заказы · 30 дней", byBiz: "По типу бизнеса", recent: "Последние заказы", viewAll: "Все заказы →",
     st: { new: "Новый", contacted: "Связались", inProgress: "В работе", done: "Выполнен", cancelled: "Отменён" },
     all: "Все", allBiz: "Все типы бизнеса",
-    biz: { restaurant: "Ресторан / кафе", hotel: "Отель", barber: "Барбершоп / салон", market: "Супермаркет / магазин", clothing: "Магазин одежды", other: "Другое" },
+    biz: { restaurant: "Ресторан / кафе", hotel: "Отель", barber: "Барбершоп / салон", market: "Супермаркет / магазин", clothing: "Магазин одежды", commerce: "Интернет-магазин / платформа доставки", other: "Другое" },
     colClient: "Клиент", colBiz: "Бизнес", colBudget: "Бюджет", colMsg: "Сообщение", colStatus: "Статус", colDate: "Дата",
     emptyTitle: "Заказов пока нет", emptyText: "Новые заявки с сайта появятся здесь сразу.", noMatch: "Ничего не найдено.",
     call: "Позвонить", telegram: "Telegram", whatsapp: "WhatsApp", copy: "Копировать", copied: "Номер скопирован",
@@ -474,7 +474,7 @@ const I18N = {
     chart30: "Buyurtmalar · 30 kun", byBiz: "Biznes turi boʻyicha", recent: "Oxirgi buyurtmalar", viewAll: "Hammasi →",
     st: { new: "Yangi", contacted: "Bogʻlanildi", inProgress: "Jarayonda", done: "Bajarildi", cancelled: "Bekor qilindi" },
     all: "Hammasi", allBiz: "Barcha biznes turlari",
-    biz: { restaurant: "Restoran / kafe", hotel: "Mehmonxona", barber: "Sartaroshxona / salon", market: "Supermarket / doʻkon", clothing: "Kiyim doʻkoni", other: "Boshqa" },
+    biz: { restaurant: "Restoran / kafe", hotel: "Mehmonxona", barber: "Sartaroshxona / salon", market: "Supermarket / doʻkon", clothing: "Kiyim doʻkoni", commerce: "Onlayn doʻkon / yetkazib berish platformasi", other: "Boshqa" },
     colClient: "Mijoz", colBiz: "Biznes", colBudget: "Byudjet", colMsg: "Xabar", colStatus: "Holat", colDate: "Sana",
     emptyTitle: "Hozircha buyurtma yoʻq", emptyText: "Saytdan kelgan yangi soʻrovlar shu yerda darhol paydo boʻladi.", noMatch: "Hech narsa topilmadi.",
     call: "Qoʻngʻiroq", telegram: "Telegram", whatsapp: "WhatsApp", copy: "Nusxa", copied: "Raqam nusxalandi",
@@ -487,7 +487,7 @@ const I18N = {
 };
 const LANG_HTML = { en: "en", ru: "ru", uz: "uz" };
 const STATUSES = ["new", "contacted", "inProgress", "done", "cancelled"];
-const BIZ = ["restaurant", "hotel", "barber", "market", "clothing", "other"];
+const BIZ = ["restaurant", "hotel", "barber", "market", "clothing", "commerce", "other"];
 
 let lang = (() => { try { return localStorage.getItem("wc-admin-lang") || ""; } catch { return ""; } })();
 if (!I18N[lang]) lang = /^ru/i.test(navigator.language) ? "ru" : /^uz/i.test(navigator.language) ? "uz" : "en";

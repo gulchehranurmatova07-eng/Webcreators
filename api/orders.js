@@ -4,7 +4,7 @@
 const crypto = require("crypto");
 const L = require("./_lib");
 
-const BUSINESS_KEYS = ["restaurant", "hotel", "barber", "market", "clothing", "other"];
+const BUSINESS_KEYS = ["restaurant", "hotel", "barber", "market", "clothing", "commerce", "other"];
 const BUDGET_KEYS = ["b1", "b2", "b3", "b4", "b5", "b6"];
 
 module.exports = async function handler(req, res) {
