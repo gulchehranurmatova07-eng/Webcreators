@@ -2575,6 +2575,10 @@ const I18N = {
 
   /* ---------- quote form ---------- */
   let formResultState = null; // null | {kind:"ok"} | {kind:"tg", link}
+  // Sent with each submission. A retry of the same request reuses the ID, so the order is saved only once.
+  const newRequestId = () => (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2, 12)).replace(/[^A-Za-z0-9_-]/g, "");
+  let formRequestId = newRequestId();
+  const formOpenedAt = Date.now();
   function showErr(field, errId, bad) {
     const e = $("#" + errId);
     field.setAttribute("aria-invalid", bad ? "true" : "false");
@@ -2644,7 +2648,9 @@ const I18N = {
         budgetKey: budSel.value,
         langCode: lang,
         page: location.pathname + location.search,
-        company: $("#f-company").value
+        company: $("#f-company").value,
+        elapsed: Date.now() - formOpenedAt,
+        requestId: formRequestId
       });
       if (CONFIG.formEndpoint) {
         const label = btn.innerHTML;
@@ -2657,6 +2663,7 @@ const I18N = {
             body: JSON.stringify(payload)
           });
           if (res.ok) {
+            formRequestId = newRequestId();
             formResultState = { kind: "ok" };
             renderResult();
             $("#form-result h3").focus();

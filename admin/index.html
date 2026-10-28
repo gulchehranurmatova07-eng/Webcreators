@@ -152,8 +152,8 @@ p{margin:0}
 @media (min-width:1024px){.mtabs{display:none}}
 
 /* ===== KPI ===== */
-.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-bottom:18px}
-@media (max-width:1280px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
+@media (max-width:1100px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
 .kpi{padding:16px 16px 14px;position:relative;overflow:hidden;animation:rise .6s var(--ease) both}
 .kpi::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(47,128,255,.16),transparent 70%)}
@@ -240,7 +240,7 @@ tbody tr:last-child td{border-bottom:0}
 .ocard-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted)}
 
 /* ===== BOARD ===== */
-.board{display:grid;grid-template-columns:repeat(5,minmax(240px,1fr));gap:14px;overflow-x:auto;padding-bottom:10px;align-items:start}
+.board{display:grid;grid-template-columns:repeat(6,minmax(230px,1fr));gap:14px;overflow-x:auto;padding-bottom:10px;align-items:start}
 .col{padding:12px;min-height:240px;transition:border-color .2s,background .2s}
 .col.drop{border-color:rgba(98,164,255,.6);background:rgba(47,128,255,.08)}
 .col-h{display:flex;align-items:center;justify-content:space-between;margin:2px 4px 12px}
@@ -307,6 +307,55 @@ dialog h3{font-size:18px;margin-bottom:8px}
 dialog p{color:var(--muted);font-size:14px;margin-bottom:20px}
 dialog .row{display:flex;gap:10px;justify-content:flex-end}
 
+/* status: in discussion */
+.st-discussion{color:#4FD1E8;background:rgba(79,209,232,.1);border-color:rgba(79,209,232,.25)}
+.seg button[aria-pressed="true"].st-discussion{background:rgba(79,209,232,.18);border-color:#4FD1E8}
+/* 2FA screens */
+.gate-card.wide{max-width:460px}
+.small{font-size:13px}
+.hint{font-size:12px;color:var(--dim);margin-top:6px}
+.code-input{font-family:var(--ff-head);font-size:22px;letter-spacing:.3em;text-align:center}
+.qr{width:208px;height:208px;margin:16px auto;padding:10px;border-radius:14px;background:#fff;display:grid;place-items:center}
+.qr svg,.qr img{width:100%;height:100%}
+.secret{display:block;padding:10px 12px;margin-bottom:16px;border-radius:10px;background:rgba(47,128,255,.1);border:1px solid var(--line-2);font-size:14px;letter-spacing:.08em;word-break:break-all;color:var(--blue-2);user-select:all}
+#enroll form{display:grid;gap:10px;text-align:left}
+.codes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0;padding:0;list-style:none;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px}
+.codes li{padding:8px;border-radius:10px;border:1px solid var(--line-2);background:rgba(255,255,255,.03)}
+.row-btns{display:flex;gap:10px;justify-content:center;margin-bottom:14px}
+.check{display:flex;gap:10px;align-items:center;justify-content:center;margin:6px 0 16px;font-size:14px;color:var(--muted)}
+.gap-top{margin-top:12px}
+.side-lang{margin:0 0 8px 6px;align-self:start}
+/* pagination, date filters, notification badges */
+.pager{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;font-size:13px;color:var(--dim)}
+.pager .btns{display:flex;gap:8px}
+.filters input[type=date]{width:auto;border-radius:999px;padding:7px 14px;font-size:13px;color-scheme:dark}
+.nb{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid var(--line)}
+.nb.sent{color:var(--ok);border-color:rgba(61,220,151,.3)}
+.nb.failed{color:var(--err);border-color:rgba(255,107,122,.35);background:rgba(255,107,122,.08)}
+.nb.pending{color:var(--gold);border-color:rgba(226,190,99,.3)}
+.nb.not_configured{color:var(--dim)}
+.notify-box{display:grid;gap:10px;padding:14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:13px}
+.notify-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.notify-row .err{color:var(--err);font-size:12px;overflow-wrap:anywhere;flex-basis:100%}
+.banner{display:flex;align-items:center;gap:12px;padding:12px 16px;margin-bottom:16px;border-radius:14px;border:1px solid rgba(255,107,122,.35);background:rgba(255,107,122,.08);font-size:14px}
+.banner svg{width:20px;height:20px;color:var(--err);flex:none}
+.banner .grow{flex:1}
+/* security view */
+.sec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media (max-width:1100px){.sec-grid{grid-template-columns:1fr}}
+.kv{display:grid;gap:10px;font-size:14px}
+.kv div{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.kv span:first-child{color:var(--muted)}
+.ok-txt{color:var(--ok);font-weight:600}.err-txt{color:var(--err);font-weight:600}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.list-plain{display:grid;gap:2px;font-size:13px}
+.list-plain>div{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:9px 10px;border-radius:10px}
+.list-plain>div:nth-child(odd){background:rgba(255,255,255,.02)}
+.list-plain time{color:var(--dim);font-variant-numeric:tabular-nums}
+.list-plain code{font-size:12px;color:var(--blue-2)}
+@media (max-width:640px){.list-plain>div{grid-template-columns:1fr;gap:2px}}
+dialog form{margin:0}
+
 .view{animation:rise .45s var(--ease) both}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -330,7 +379,49 @@ dialog .row{display:flex;gap:10px;justify-content:flex-end}
       <p class="gate-err" id="login-err" role="alert"></p>
       <button class="btn btn-primary btn-lg btn-block" type="submit" id="login-btn"><span data-t="signIn"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
     </form>
+    <form id="mfa-form" novalidate hidden>
+      <div>
+        <label class="label" for="mfa-code" data-t="mfaCode"></label>
+        <input class="input code-input" id="mfa-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="11" required>
+        <p class="hint" data-t="mfaHint"></p>
+      </div>
+      <p class="gate-err" id="mfa-err" role="alert"></p>
+      <button class="btn btn-primary btn-lg btn-block" type="submit" id="mfa-btn"><span data-t="verify"></span></button>
+      <button class="btn btn-ghost btn-block" type="button" id="mfa-back" data-t="back"></button>
+    </form>
     <p class="gate-foot">© <span class="yr"></span> WEB-CREATORS</p>
+  </div>
+</section>
+
+<!-- ============ 2FA SETUP (first sign-in) ============ -->
+<section class="gate" id="enroll" hidden>
+  <div class="gate-top"><div class="lang" data-lang-switch></div></div>
+  <div class="gate-card glass wide">
+    <img class="gate-logo" src="../assets/brand/logo-full.png" alt="WEB-CREATORS">
+    <div class="gate-badge"><span data-t="mfaSetupTitle"></span></div>
+    <div id="enroll-step1">
+      <p class="muted small" data-t="mfaSetupText"></p>
+      <div class="qr" id="enroll-qr"></div>
+      <p class="label" data-t="mfaManual"></p>
+      <code class="secret" id="enroll-secret"></code>
+      <form id="enroll-form" novalidate>
+        <label class="label" for="enroll-code" data-t="mfaEnterCode"></label>
+        <input class="input code-input" id="enroll-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="7" required>
+        <p class="gate-err" id="enroll-err" role="alert"></p>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" id="enroll-btn"><span data-t="mfaTurnOn"></span></button>
+      </form>
+    </div>
+    <div id="enroll-step2" hidden>
+      <p class="muted small" data-t="recoveryText"></p>
+      <ol class="codes" id="enroll-codes"></ol>
+      <div class="row-btns">
+        <button class="btn btn-ghost" type="button" id="codes-copy" data-t="copy"></button>
+        <button class="btn btn-ghost" type="button" id="codes-dl" data-t="download"></button>
+      </div>
+      <label class="check"><input type="checkbox" id="codes-saved"> <span data-t="recoverySaved"></span></label>
+      <button class="btn btn-primary btn-lg btn-block" type="button" id="codes-done" disabled data-t="continue"></button>
+    </div>
+    <button class="btn btn-ghost btn-block gap-top" type="button" data-logout data-t="logout"></button>
   </div>
 </section>
 
@@ -352,7 +443,7 @@ dialog .row{display:flex;gap:10px;justify-content:flex-end}
     <div class="side-logo"><img src="../assets/brand/logo.png" alt="WEB-CREATORS"><small data-t="adminPanel"></small></div>
     <nav id="side-nav"></nav>
     <div class="side-bottom">
-      <div class="lang" data-lang-switch style="margin:0 0 8px 6px;align-self:start"></div>
+      <div class="lang side-lang" data-lang-switch></div>
       <a class="nav-btn" href="../" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span data-t="openSite"></span></a>
       <button class="nav-btn" type="button" data-logout><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l5-5-5-5M15 12H4"/></svg><span data-t="logout"></span></button>
     </div>
@@ -393,704 +484,29 @@ dialog .row{display:flex;gap:10px;justify-content:flex-end}
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dr-name" aria-hidden="true"></aside>
 
 <dialog id="confirm">
-  <h3 data-t="deleteQ"></h3>
-  <p data-t="deleteText"></p>
+  <h3 id="confirm-title"></h3>
+  <p id="confirm-text"></p>
   <div class="row">
     <button class="btn btn-ghost" type="button" value="no" data-t="cancel"></button>
-    <button class="btn btn-danger" type="button" value="yes" data-t="delete"></button>
+    <button class="btn btn-danger" type="button" value="yes" id="confirm-yes"></button>
   </div>
+</dialog>
+
+<dialog id="prompt">
+  <form method="dialog" id="prompt-form" novalidate>
+    <h3 id="prompt-title"></h3>
+    <p id="prompt-text"></p>
+    <input class="input code-input" id="prompt-input" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="11">
+    <div class="row gap-top">
+      <button class="btn btn-ghost" type="button" value="no" data-t="cancel"></button>
+      <button class="btn btn-primary" type="submit" value="yes" data-t="continue"></button>
+    </div>
+  </form>
 </dialog>
 
 <div class="toasts" id="toasts" aria-live="polite"></div>
 
-<script>
-(() => {
-"use strict";
-
-/* ------------------------------------------------------------------ i18n */
-const I18N = {
-  en: {
-    adminPanel: "Admin panel", password: "Password", showPassword: "Show password", signIn: "Sign in",
-    wrongPassword: "Wrong password. Try again.", tooMany: "Too many attempts. Wait 15 minutes.", netErr: "Can't reach the server. Check your connection.",
-    setupTitle: "Finish setup", openVercel: "Open Vercel dashboard", setupFoot: "After adding them, redeploy the project in Vercel.",
-    setupStorage: "Database", setupStorageText: "Vercel → Storage → Create → Upstash Redis → connect it to this project.",
-    setupPw: "Admin password", setupPwText: "Vercel → Settings → Environment Variables → add <code>ADMIN_PASSWORD</code>.",
-    overview: "Overview", orders: "Orders", board: "Board",
-    overviewSub: "Everything happening with your website orders", ordersSub: "Every request sent from the website form", boardSub: "Drag cards between columns to update the status",
-    openSite: "Open website", logout: "Log out", search: "Search", searchPh: "Search name, phone, message…", refresh: "Refresh", export: "Export CSV",
-    synced: "Live · updated {t}", offline: "Offline", justNow: "just now",
-    kTotal: "Total orders", kNew: "New", kProgress: "In progress", kDone: "Completed", kRevenue: "Revenue", kConv: "Conversion",
-    kTotalHint: "{n} this week", kNewHint: "Waiting for a reply", kProgressHint: "Contacted + building", kDoneHint: "Finished websites", kRevenueHint: "From completed orders", kConvHint: "Orders → completed",
-    chart30: "Orders · last 30 days", byBiz: "By business type", recent: "Latest orders", viewAll: "View all →",
-    st: { new: "New", contacted: "Contacted", inProgress: "In progress", done: "Completed", cancelled: "Cancelled" },
-    all: "All", allBiz: "All business types",
-    biz: { restaurant: "Restaurant / cafe", hotel: "Hotel", barber: "Barbershop / beauty", market: "Supermarket / store", clothing: "Clothing store", commerce: "E-commerce / delivery platform", other: "Other" },
-    colClient: "Client", colBiz: "Business", colBudget: "Budget", colMsg: "Message", colStatus: "Status", colDate: "Date",
-    emptyTitle: "No orders yet", emptyText: "New requests from your website will appear here instantly.", noMatch: "Nothing matches your filters.",
-    call: "Call", telegram: "Telegram", whatsapp: "WhatsApp", copy: "Copy", copied: "Phone number copied",
-    status: "Status", details: "Details", fBiz: "Business", fBudget: "Budget", fLang: "Language", fDate: "Received", fPage: "Page", fId: "Order ID",
-    message: "Message from client", price: "Agreed price", pricePh: "e.g. 650", notes: "Private notes", notesPh: "Calls, deadlines, what the client wants…",
-    history: "History", created: "Order received", save: "Save changes", saved: "Saved", delete: "Delete", cancel: "Cancel", close: "Close",
-    deleteQ: "Delete this order?", deleteText: "This removes it permanently. This can't be undone.", deleted: "Order deleted",
-    newOrder: "New order from {name}", saveErr: "Couldn't save. Try again.", sessionEnd: "Session expired — please sign in again."
-  },
-  ru: {
-    adminPanel: "Админ-панель", password: "Пароль", showPassword: "Показать пароль", signIn: "Войти",
-    wrongPassword: "Неверный пароль. Попробуйте ещё раз.", tooMany: "Слишком много попыток. Подождите 15 минут.", netErr: "Нет связи с сервером. Проверьте интернет.",
-    setupTitle: "Завершите настройку", openVercel: "Открыть Vercel", setupFoot: "После добавления сделайте Redeploy проекта в Vercel.",
-    setupStorage: "База данных", setupStorageText: "Vercel → Storage → Create → Upstash Redis → подключите к этому проекту.",
-    setupPw: "Пароль админа", setupPwText: "Vercel → Settings → Environment Variables → добавьте <code>ADMIN_PASSWORD</code>.",
-    overview: "Обзор", orders: "Заказы", board: "Доска",
-    overviewSub: "Всё о заказах с вашего сайта", ordersSub: "Все заявки из формы на сайте", boardSub: "Перетаскивайте карточки, чтобы менять статус",
-    openSite: "Открыть сайт", logout: "Выйти", search: "Поиск", searchPh: "Имя, телефон, сообщение…", refresh: "Обновить", export: "Экспорт CSV",
-    synced: "Онлайн · обновлено {t}", offline: "Нет связи", justNow: "только что",
-    kTotal: "Всего заказов", kNew: "Новые", kProgress: "В работе", kDone: "Выполнено", kRevenue: "Выручка", kConv: "Конверсия",
-    kTotalHint: "{n} за неделю", kNewHint: "Ждут ответа", kProgressHint: "Связались + в работе", kDoneHint: "Готовые сайты", kRevenueHint: "По выполненным", kConvHint: "Заказы → выполнено",
-    chart30: "Заказы · 30 дней", byBiz: "По типу бизнеса", recent: "Последние заказы", viewAll: "Все заказы →",
-    st: { new: "Новый", contacted: "Связались", inProgress: "В работе", done: "Выполнен", cancelled: "Отменён" },
-    all: "Все", allBiz: "Все типы бизнеса",
-    biz: { restaurant: "Ресторан / кафе", hotel: "Отель", barber: "Барбершоп / салон", market: "Супермаркет / магазин", clothing: "Магазин одежды", commerce: "Интернет-магазин / платформа доставки", other: "Другое" },
-    colClient: "Клиент", colBiz: "Бизнес", colBudget: "Бюджет", colMsg: "Сообщение", colStatus: "Статус", colDate: "Дата",
-    emptyTitle: "Заказов пока нет", emptyText: "Новые заявки с сайта появятся здесь сразу.", noMatch: "Ничего не найдено.",
-    call: "Позвонить", telegram: "Telegram", whatsapp: "WhatsApp", copy: "Копировать", copied: "Номер скопирован",
-    status: "Статус", details: "Детали", fBiz: "Бизнес", fBudget: "Бюджет", fLang: "Язык", fDate: "Получен", fPage: "Страница", fId: "ID заказа",
-    message: "Сообщение клиента", price: "Согласованная цена", pricePh: "например 650", notes: "Заметки", notesPh: "Звонки, сроки, пожелания клиента…",
-    history: "История", created: "Заказ получен", save: "Сохранить", saved: "Сохранено", delete: "Удалить", cancel: "Отмена", close: "Закрыть",
-    deleteQ: "Удалить заказ?", deleteText: "Он будет удалён навсегда. Отменить нельзя.", deleted: "Заказ удалён",
-    newOrder: "Новый заказ: {name}", saveErr: "Не удалось сохранить. Попробуйте ещё раз.", sessionEnd: "Сессия истекла — войдите снова."
-  },
-  uz: {
-    adminPanel: "Admin panel", password: "Parol", showPassword: "Parolni koʻrsatish", signIn: "Kirish",
-    wrongPassword: "Parol notoʻgʻri. Qayta urinib koʻring.", tooMany: "Juda koʻp urinish. 15 daqiqa kuting.", netErr: "Serverga ulanib boʻlmadi. Internetni tekshiring.",
-    setupTitle: "Sozlashni yakunlang", openVercel: "Vercel'ni ochish", setupFoot: "Qoʻshgandan soʻng Vercel'da loyihani Redeploy qiling.",
-    setupStorage: "Maʼlumotlar bazasi", setupStorageText: "Vercel → Storage → Create → Upstash Redis → shu loyihaga ulang.",
-    setupPw: "Admin paroli", setupPwText: "Vercel → Settings → Environment Variables → <code>ADMIN_PASSWORD</code> qoʻshing.",
-    overview: "Umumiy", orders: "Buyurtmalar", board: "Doska",
-    overviewSub: "Saytingizdagi buyurtmalar haqida hammasi", ordersSub: "Saytdagi formadan kelgan barcha soʻrovlar", boardSub: "Holatni oʻzgartirish uchun kartani sudrang",
-    openSite: "Saytni ochish", logout: "Chiqish", search: "Qidiruv", searchPh: "Ism, telefon, xabar…", refresh: "Yangilash", export: "CSV yuklab olish",
-    synced: "Onlayn · {t} yangilandi", offline: "Aloqa yoʻq", justNow: "hozirgina",
-    kTotal: "Jami buyurtmalar", kNew: "Yangi", kProgress: "Jarayonda", kDone: "Bajarildi", kRevenue: "Daromad", kConv: "Konversiya",
-    kTotalHint: "Bu hafta {n} ta", kNewHint: "Javob kutmoqda", kProgressHint: "Bogʻlanildi + jarayonda", kDoneHint: "Tayyor saytlar", kRevenueHint: "Bajarilganlardan", kConvHint: "Buyurtma → bajarildi",
-    chart30: "Buyurtmalar · 30 kun", byBiz: "Biznes turi boʻyicha", recent: "Oxirgi buyurtmalar", viewAll: "Hammasi →",
-    st: { new: "Yangi", contacted: "Bogʻlanildi", inProgress: "Jarayonda", done: "Bajarildi", cancelled: "Bekor qilindi" },
-    all: "Hammasi", allBiz: "Barcha biznes turlari",
-    biz: { restaurant: "Restoran / kafe", hotel: "Mehmonxona", barber: "Sartaroshxona / salon", market: "Supermarket / doʻkon", clothing: "Kiyim doʻkoni", commerce: "Onlayn doʻkon / yetkazib berish platformasi", other: "Boshqa" },
-    colClient: "Mijoz", colBiz: "Biznes", colBudget: "Byudjet", colMsg: "Xabar", colStatus: "Holat", colDate: "Sana",
-    emptyTitle: "Hozircha buyurtma yoʻq", emptyText: "Saytdan kelgan yangi soʻrovlar shu yerda darhol paydo boʻladi.", noMatch: "Hech narsa topilmadi.",
-    call: "Qoʻngʻiroq", telegram: "Telegram", whatsapp: "WhatsApp", copy: "Nusxa", copied: "Raqam nusxalandi",
-    status: "Holat", details: "Tafsilotlar", fBiz: "Biznes", fBudget: "Byudjet", fLang: "Til", fDate: "Qabul qilindi", fPage: "Sahifa", fId: "Buyurtma ID",
-    message: "Mijoz xabari", price: "Kelishilgan narx", pricePh: "masalan 650", notes: "Shaxsiy eslatmalar", notesPh: "Qoʻngʻiroqlar, muddatlar, mijoz istaklari…",
-    history: "Tarix", created: "Buyurtma qabul qilindi", save: "Saqlash", saved: "Saqlandi", delete: "Oʻchirish", cancel: "Bekor qilish", close: "Yopish",
-    deleteQ: "Buyurtmani oʻchirasizmi?", deleteText: "U butunlay oʻchiriladi. Qaytarib boʻlmaydi.", deleted: "Buyurtma oʻchirildi",
-    newOrder: "Yangi buyurtma: {name}", saveErr: "Saqlab boʻlmadi. Qayta urinib koʻring.", sessionEnd: "Sessiya tugadi — qayta kiring."
-  }
-};
-const LANG_HTML = { en: "en", ru: "ru", uz: "uz" };
-const STATUSES = ["new", "contacted", "inProgress", "done", "cancelled"];
-const BIZ = ["restaurant", "hotel", "barber", "market", "clothing", "commerce", "other"];
-
-let lang = (() => { try { return localStorage.getItem("wc-admin-lang") || ""; } catch { return ""; } })();
-if (!I18N[lang]) lang = /^ru/i.test(navigator.language) ? "ru" : /^uz/i.test(navigator.language) ? "uz" : "en";
-
-const t = (k, vars) => {
-  let v = k.split(".").reduce((o, p) => (o == null ? o : o[p]), I18N[lang]);
-  if (v == null) v = k.split(".").reduce((o, p) => (o == null ? o : o[p]), I18N.en);
-  if (typeof v === "string" && vars) v = v.replace(/\{(\w+)\}/g, (_, n) => vars[n] ?? "");
-  return v ?? k;
-};
-const $ = (s, r = document) => r.querySelector(s);
-const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-
-/* ------------------------------------------------------------------ icons */
-const IC = {
-  grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>',
-  list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1" fill="currentColor"/><circle cx="3.5" cy="12" r="1" fill="currentColor"/><circle cx="3.5" cy="18" r="1" fill="currentColor"/></svg>',
-  board: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="10" rx="1.5"/><rect x="17" y="4" width="4" height="13" rx="1.5"/></svg>',
-  inbox: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 5h14l2 8v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6z"/></svg>',
-  spark: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2z"/></svg>',
-  clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
-  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
-  dollar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 6.5c-1-1.3-2.8-2-5-2-3 0-5 1.5-5 3.7 0 5 10 2.5 10 7.6 0 2.2-2 3.7-5 3.7-2.3 0-4.2-.8-5.2-2.2"/></svg>',
-  trend: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>',
-  phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',
-  tg: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.2 15.1c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.1 13 1.2 11.5c-1.1-.3-1.1-1.1.2-1.6L20.6 2.5c.9-.3 1.7.2 1.3 1.8z"/></svg>',
-  wa: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.5 20.5l1.3-4.4A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-2-1-1 .8a4 4 0 0 1-2.1-2.1l.8-1-1-2z" fill="currentColor" stroke="none"/></svg>',
-  copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="13" height="13" rx="2.5"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>',
-  x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6L6 18"/></svg>',
-  bell: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 1 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9M10 20a2 2 0 0 0 4 0"/></svg>',
-  warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2zM12 10v5M12 18v.5"/></svg>'
-};
-
-/* ------------------------------------------------------------------ API */
-async function api(path, opts = {}) {
-  const res = await fetch(path, {
-    method: opts.method || "GET",
-    headers: opts.body ? { "Content-Type": "application/json" } : undefined,
-    body: opts.body ? JSON.stringify(opts.body) : undefined,
-    credentials: "same-origin",
-    cache: "no-store"
-  });
-  const data = await res.json().catch(() => ({}));
-  if (res.status === 401 && path !== "/api/auth") { showLogin(t("sessionEnd")); throw new Error("unauthorized"); }
-  if (!res.ok) { const e = new Error(data.error || "HTTP " + res.status); e.status = res.status; e.data = data; throw e; }
-  return data;
-}
-
-/* ------------------------------------------------------------------ state */
-const state = {
-  orders: [], view: "overview", status: "all", biz: "", q: "",
-  lastSync: 0, online: true, openId: null, knownIds: null, poll: null
-};
-
-/* ------------------------------------------------------------------ language */
-function applyLang() {
-  document.documentElement.lang = LANG_HTML[lang];
-  $$("[data-t]").forEach((el) => { el.textContent = t(el.dataset.t); });
-  $$("[data-t-ph]").forEach((el) => { el.placeholder = t(el.dataset.tPh); });
-  $$("[data-t-aria]").forEach((el) => { el.setAttribute("aria-label", t(el.dataset.tAria)); });
-  $$("[data-lang-switch]").forEach((box) => {
-    box.innerHTML = Object.keys(I18N).map((k) => `<button type="button" data-l="${k}" aria-pressed="${k === lang}">${k.toUpperCase()}</button>`).join("");
-  });
-  $$(".yr").forEach((el) => { el.textContent = new Date().getFullYear(); });
-  if (!$("#setup").hidden) renderSetup(state.setup);
-  if (!$("#app").hidden) { renderNav(); render(); if (state.openId) openDrawer(state.openId, true); }
-}
-document.addEventListener("click", (e) => {
-  const b = e.target.closest("[data-l]");
-  if (!b) return;
-  lang = b.dataset.l;
-  try { localStorage.setItem("wc-admin-lang", lang); } catch {}
-  applyLang();
-});
-
-/* ------------------------------------------------------------------ gates */
-function showOnly(id) { ["login", "setup", "app"].forEach((x) => { $("#" + x).hidden = x !== id; }); }
-
-function showLogin(msg) {
-  stopPolling();
-  closeDrawer();
-  showOnly("login");
-  $("#login-err").textContent = msg || "";
-  $("#pw").value = "";
-  setTimeout(() => $("#pw").focus(), 50);
-}
-
-function renderSetup(setup) {
-  const item = (ok, title, text) => `<div class="setup-item ${ok ? "ok" : "miss"}"><span class="dot">${ok ? "✓" : "!"}</span><div><b>${esc(title)}</b><span>${ok ? "" : text}</span></div></div>`;
-  $("#setup-list").innerHTML = item(setup.storage, t("setupStorage"), t("setupStorageText")) + item(setup.password, t("setupPw"), t("setupPwText"));
-}
-
-$("#pw-toggle").addEventListener("click", () => { const i = $("#pw"); i.type = i.type === "password" ? "text" : "password"; i.focus(); });
-
-$("#login-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const btn = $("#login-btn"), err = $("#login-err");
-  if (!$("#pw").value) { $("#pw").focus(); return; }
-  btn.disabled = true; err.textContent = "";
-  try {
-    await api("/api/auth", { method: "POST", body: { password: $("#pw").value } });
-    $("#pw").value = "";
-    await enterApp();
-  } catch (ex) {
-    err.textContent = ex.status === 401 ? t("wrongPassword") : ex.status === 429 ? t("tooMany") : ex.status === 503 ? "" : t("netErr");
-    if (ex.status === 503 && ex.data?.setup) { state.setup = ex.data.setup; renderSetup(ex.data.setup); showOnly("setup"); }
-    $("#pw").select();
-  } finally { btn.disabled = false; }
-});
-
-$$("[data-logout]").forEach((b) => b.addEventListener("click", async () => {
-  try { await api("/api/auth", { method: "DELETE" }); } catch {}
-  state.orders = []; state.knownIds = null;
-  showLogin();
-}));
-
-/* ------------------------------------------------------------------ boot */
-async function boot() {
-  applyLang();
-  try {
-    const s = await api("/api/auth");
-    state.setup = s.setup;
-    if (!s.setup.storage || !s.setup.password) { renderSetup(s.setup); showOnly("setup"); return; }
-    if (s.loggedIn) await enterApp(); else showLogin();
-  } catch {
-    showLogin(t("netErr"));
-  }
-}
-
-async function enterApp() {
-  showOnly("app");
-  const hash = location.hash.replace("#", "");
-  if (["overview", "orders", "board"].includes(hash)) state.view = hash;
-  renderNav();
-  await load(true);
-  startPolling();
-}
-
-/* ------------------------------------------------------------------ data */
-async function load(first) {
-  const btn = $("#refresh svg");
-  btn && btn.classList.add("spin");
-  try {
-    const { orders } = await api("/api/orders");
-    const fresh = state.knownIds ? orders.filter((o) => !state.knownIds.has(o.id)) : [];
-    state.knownIds = new Set(orders.map((o) => o.id));
-    state.orders = orders;
-    state.online = true;
-    state.lastSync = Date.now();
-    fresh.slice(0, 3).forEach((o) => toast(t("newOrder", { name: o.name }), "bell"));
-    if (fresh.length) ping();
-    renderNav();
-    render(first);
-  } catch (e) {
-    if (e.message !== "unauthorized") { state.online = false; renderSync(); }
-  } finally {
-    setTimeout(() => btn && btn.classList.remove("spin"), 300);
-  }
-}
-function startPolling() { stopPolling(); state.poll = setInterval(() => { if (!document.hidden) load(); renderSync(); }, 20000); }
-function stopPolling() { clearInterval(state.poll); state.poll = null; }
-document.addEventListener("visibilitychange", () => { if (!document.hidden && !$("#app").hidden) load(); });
-$("#refresh").addEventListener("click", () => load());
-
-function ping() {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const o = ctx.createOscillator(), g = ctx.createGain();
-    o.type = "sine"; o.frequency.setValueAtTime(880, ctx.currentTime); o.frequency.setValueAtTime(1320, ctx.currentTime + .12);
-    g.gain.setValueAtTime(.0001, ctx.currentTime); g.gain.exponentialRampToValueAtTime(.12, ctx.currentTime + .02); g.gain.exponentialRampToValueAtTime(.0001, ctx.currentTime + .35);
-    o.connect(g).connect(ctx.destination); o.start(); o.stop(ctx.currentTime + .4);
-  } catch {}
-}
-
-/* ------------------------------------------------------------------ helpers */
-const fmtMoney = (n) => "$" + Number(n || 0).toLocaleString("en-US", { maximumFractionDigits: 0 });
-const locale = () => ({ en: "en-GB", ru: "ru-RU", uz: "uz-Latn-UZ" }[lang]);
-function fmtDate(ts, withTime = true) {
-  const d = new Date(ts);
-  try { return d.toLocaleString(locale(), withTime ? { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" } : { day: "numeric", month: "short" }); }
-  catch { return d.toLocaleString(); }
-}
-function ago(ts) {
-  const s = Math.round((Date.now() - ts) / 1000);
-  if (s < 45) return t("justNow");
-  try {
-    const rtf = new Intl.RelativeTimeFormat(locale(), { numeric: "auto" });
-    if (s < 3600) return rtf.format(-Math.round(s / 60), "minute");
-    if (s < 86400) return rtf.format(-Math.round(s / 3600), "hour");
-    return rtf.format(-Math.round(s / 86400), "day");
-  } catch { return fmtDate(ts); }
-}
-const initials = (n) => String(n || "?").trim().split(/\s+/).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
-const pill = (s) => `<span class="pill st-${s}"><i></i>${esc(t("st." + s))}</span>`;
-const bizLabel = (o) => (o.businessKey && I18N.en.biz[o.businessKey]) ? t("biz." + o.businessKey) : o.business;
-const digits = (p) => {
-  let d = String(p || "").replace(/\D/g, "");
-  if (d.length === 9) d = "998" + d;          // local Uzbek number without country code
-  if (d.length === 10 && d[0] === "8") d = "998" + d.slice(1);
-  return d;
-};
-
-function renderSync() {
-  const el = $("#sync");
-  if (!el) return;
-  el.classList.toggle("off", !state.online);
-  $("#sync-text").textContent = state.online ? t("synced", { t: ago(state.lastSync) }) : t("offline");
-}
-
-function filtered() {
-  const q = state.q.trim().toLowerCase();
-  return state.orders.filter((o) =>
-    (state.status === "all" || o.status === state.status) &&
-    (!state.biz || o.businessKey === state.biz) &&
-    (!q || [o.name, o.phone, o.message, o.business, o.notes, o.budget].join(" ").toLowerCase().includes(q))
-  );
-}
-
-/* ------------------------------------------------------------------ nav */
-function renderNav() {
-  const unseen = state.orders.filter((o) => o.status === "new").length;
-  const items = [["overview", IC.grid], ["orders", IC.list], ["board", IC.board]];
-  const html = items.map(([k, ic]) => `<button class="nav-btn" type="button" data-view="${k}" ${state.view === k ? 'aria-current="page"' : ""}>${ic}<span>${esc(t(k))}</span>${k === "orders" && unseen ? `<span class="count">${unseen}</span>` : ""}</button>`).join("");
-  $("#side-nav").innerHTML = html;
-  $("#m-nav").innerHTML = html;
-  document.title = (unseen ? `(${unseen}) ` : "") + t("adminPanel") + " — WEB-CREATORS";
-}
-document.addEventListener("click", (e) => {
-  const b = e.target.closest("[data-view]");
-  if (!b) return;
-  state.view = b.dataset.view;
-  if (b.dataset.status) state.status = b.dataset.status;
-  history.replaceState(null, "", "#" + state.view);
-  renderNav();
-  render(true);
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-$("#search").addEventListener("input", (e) => {
-  state.q = e.target.value;
-  if (state.view === "overview" && state.q) { state.view = "orders"; renderNav(); }
-  render();
-});
-
-/* ------------------------------------------------------------------ views */
-function render(animate) {
-  $("#view-title").textContent = t(state.view);
-  $("#view-sub").textContent = t(state.view + "Sub");
-  renderSync();
-  const v = $("#view");
-  v.className = animate ? "view" : "";
-  if (animate) { v.offsetWidth; }
-  if (state.view === "overview") v.innerHTML = viewOverview();
-  else if (state.view === "orders") v.innerHTML = viewOrders();
-  else v.innerHTML = viewBoard();
-  if (state.view === "overview") drawChart();
-  if (state.view === "board") wireBoard();
-}
-
-function viewOverview() {
-  const O = state.orders;
-  const by = (s) => O.filter((o) => o.status === s).length;
-  const weekAgo = Date.now() - 7 * 864e5;
-  const week = O.filter((o) => o.createdAt >= weekAgo).length;
-  const done = by("done");
-  const revenue = O.filter((o) => o.status === "done").reduce((s, o) => s + (Number(o.price) || 0), 0);
-  const conv = O.length ? Math.round((done / O.length) * 100) : 0;
-  const kpi = (label, val, hint, ic, hero, delay) => `<div class="kpi glass ${hero ? "hero" : ""}" style="animation-delay:${delay}ms"><div class="kpi-top"><span class="kpi-label">${esc(label)}</span><span class="kpi-ico">${ic}</span></div><div class="kpi-val">${val}</div><div class="kpi-hint">${esc(hint)}</div></div>`;
-
-  const counts = BIZ.map((k) => [k, O.filter((o) => (o.businessKey || "other") === k).length]).filter(([, n]) => n).sort((a, b) => b[1] - a[1]);
-  const maxB = Math.max(1, ...counts.map((c) => c[1]));
-  const recent = O.slice(0, 6);
-
-  return `
-  <div class="kpis">
-    ${kpi(t("kTotal"), O.length, t("kTotalHint", { n: week }), IC.inbox, true, 0)}
-    ${kpi(t("kNew"), by("new"), t("kNewHint"), IC.spark, false, 40)}
-    ${kpi(t("kProgress"), by("contacted") + by("inProgress"), t("kProgressHint"), IC.clock, false, 80)}
-    ${kpi(t("kDone"), done, t("kDoneHint"), IC.check, false, 120)}
-    ${kpi(t("kRevenue"), fmtMoney(revenue), t("kRevenueHint"), IC.dollar, false, 160)}
-    ${kpi(t("kConv"), conv + "%", t("kConvHint"), IC.trend, false, 200)}
-  </div>
-  <div class="grid2">
-    <section class="panel glass">
-      <div class="panel-h"><h2>${esc(t("chart30"))}</h2><span class="dim" id="chart-total"></span></div>
-      <div class="chart" id="chart"></div>
-    </section>
-    <section class="panel glass">
-      <div class="panel-h"><h2>${esc(t("byBiz"))}</h2></div>
-      ${counts.length ? `<div class="hbars">${counts.map(([k, n]) => `<div class="hbar-row"><span class="nm">${esc(t("biz." + k))}</span><div class="hbar"><span style="width:${(n / maxB) * 100}%"></span></div><span class="val">${n}</span></div>`).join("")}</div>` : emptyBlock()}
-    </section>
-  </div>
-  <section class="panel glass">
-    <div class="panel-h"><h2>${esc(t("recent"))}</h2>${O.length ? `<button class="chip" type="button" data-view="orders" data-status="all">${esc(t("viewAll"))}</button>` : ""}</div>
-    ${recent.length ? `<div class="recent">${recent.map((o) => `
-      <button type="button" data-open="${esc(o.id)}" class="${o.seen ? "" : "unseen"}">
-        <span class="avatar">${esc(initials(o.name))}</span>
-        <span class="who"><b>${esc(o.name)}</b><span>${esc(bizLabel(o))} · ${esc(ago(o.createdAt))}</span></span>
-        ${pill(o.status)}
-      </button>`).join("")}</div>` : emptyBlock()}
-  </section>`;
-}
-
-function emptyBlock(text) {
-  return `<div class="empty">${IC.inbox}<b>${esc(text ? t("noMatch") : t("emptyTitle"))}</b>${text ? "" : esc(t("emptyText"))}</div>`;
-}
-
-function viewOrders() {
-  const all = state.orders;
-  const count = (s) => s === "all" ? all.length : all.filter((o) => o.status === s).length;
-  const list = filtered();
-  const chips = ["all", ...STATUSES].map((s) => `<button class="chip" type="button" data-status-filter="${s}" aria-pressed="${state.status === s}">${esc(s === "all" ? t("all") : t("st." + s))}<span class="n">${count(s)}</span></button>`).join("");
-  const bizSel = `<select class="select" id="biz-filter" aria-label="${esc(t("colBiz"))}"><option value="">${esc(t("allBiz"))}</option>${BIZ.map((k) => `<option value="${k}" ${state.biz === k ? "selected" : ""}>${esc(t("biz." + k))}</option>`).join("")}</select>`;
-
-  let body;
-  if (!list.length) body = `<div class="glass">${emptyBlock(all.length ? "filtered" : "")}</div>`;
-  else body = `
-    <div class="table-wrap glass">
-      <table>
-        <thead><tr><th>${esc(t("colClient"))}</th><th>${esc(t("colBiz"))}</th><th>${esc(t("colBudget"))}</th><th>${esc(t("colMsg"))}</th><th>${esc(t("colStatus"))}</th><th>${esc(t("colDate"))}</th></tr></thead>
-        <tbody>${list.map((o) => `
-          <tr data-open="${esc(o.id)}" tabindex="0">
-            <td><div class="cl ${o.seen ? "" : "unseen"}"><span class="avatar">${esc(initials(o.name))}</span><div><b>${esc(o.name)}</b><span class="num">${esc(o.phone)}</span></div></div></td>
-            <td>${esc(bizLabel(o))}</td>
-            <td class="num">${o.price != null ? `<span style="color:var(--ok);font-weight:700">${fmtMoney(o.price)}</span>` : esc(o.budget)}</td>
-            <td><div class="msg-cell">${esc(o.message === "—" ? "" : o.message)}</div></td>
-            <td>${pill(o.status)}</td>
-            <td class="dim num" title="${esc(fmtDate(o.createdAt))}">${esc(ago(o.createdAt))}</td>
-          </tr>`).join("")}</tbody>
-      </table>
-      <div class="cards">${list.map((o) => `
-        <button type="button" class="ocard glass" data-open="${esc(o.id)}">
-          <div class="ocard-top"><div class="cl ${o.seen ? "" : "unseen"}"><span class="avatar">${esc(initials(o.name))}</span><div><b>${esc(o.name)}</b><span class="num">${esc(o.phone)}</span></div></div>${pill(o.status)}</div>
-          <div class="ocard-meta"><span>${esc(bizLabel(o))}</span><span>${esc(o.price != null ? fmtMoney(o.price) : o.budget)}</span><span>${esc(ago(o.createdAt))}</span></div>
-        </button>`).join("")}</div>
-    </div>`;
-  return `<div class="filters">${chips}${bizSel}</div>${body}`;
-}
-
-document.addEventListener("click", (e) => {
-  const c = e.target.closest("[data-status-filter]");
-  if (c) { state.status = c.dataset.statusFilter; render(); }
-});
-document.addEventListener("change", (e) => {
-  if (e.target.id === "biz-filter") { state.biz = e.target.value; render(); }
-});
-
-function viewBoard() {
-  const list = filtered();
-  return `<div class="board">${STATUSES.map((s) => {
-    const items = list.filter((o) => o.status === s);
-    return `<section class="col glass" data-col="${s}">
-      <div class="col-h">${pill(s)}<span class="n">${items.length}</span></div>
-      <div class="col-body">${items.map((o) => `
-        <button type="button" class="kcard" draggable="true" data-open="${esc(o.id)}" data-id="${esc(o.id)}">
-          <b>${esc(o.name)}</b>
-          <span class="biz">${esc(bizLabel(o))}</span>
-          <span class="meta"><span class="num">${esc(o.phone)}</span>${o.price != null ? `<span class="price">${fmtMoney(o.price)}</span>` : `<span>${esc(ago(o.createdAt))}</span>`}</span>
-        </button>`).join("")}</div>
-    </section>`;
-  }).join("")}</div>`;
-}
-
-function wireBoard() {
-  let dragId = null;
-  $$(".kcard").forEach((c) => {
-    c.addEventListener("dragstart", (e) => { dragId = c.dataset.id; c.classList.add("dragging"); e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", dragId); });
-    c.addEventListener("dragend", () => c.classList.remove("dragging"));
-  });
-  $$(".col").forEach((col) => {
-    col.addEventListener("dragover", (e) => { e.preventDefault(); col.classList.add("drop"); });
-    col.addEventListener("dragleave", (e) => { if (!col.contains(e.relatedTarget)) col.classList.remove("drop"); });
-    col.addEventListener("drop", async (e) => {
-      e.preventDefault(); col.classList.remove("drop");
-      const id = e.dataTransfer.getData("text/plain") || dragId;
-      const o = state.orders.find((x) => x.id === id);
-      if (!o || o.status === col.dataset.col) return;
-      await patch(id, { status: col.dataset.col });
-    });
-  });
-}
-
-/* ------------------------------------------------------------------ chart: orders per day, last 30 days */
-function drawChart() {
-  const box = $("#chart");
-  if (!box) return;
-  const days = 30, W = box.clientWidth || 600, H = box.clientHeight || 220;
-  const pad = { l: 28, r: 6, t: 14, b: 24 };
-  const start = new Date(); start.setHours(0, 0, 0, 0); start.setDate(start.getDate() - (days - 1));
-  const buckets = Array.from({ length: days }, (_, i) => { const d = new Date(start); d.setDate(start.getDate() + i); return { d, n: 0 }; });
-  state.orders.forEach((o) => {
-    const i = Math.floor((new Date(o.createdAt).setHours(0, 0, 0, 0) - start.getTime()) / 864e5);
-    if (i >= 0 && i < days) buckets[i].n++;
-  });
-  const total = buckets.reduce((s, b) => s + b.n, 0);
-  $("#chart-total").textContent = total + " · " + t("orders").toLowerCase();
-  const max = Math.max(3, ...buckets.map((b) => b.n));
-  const niceMax = Math.ceil(max / 2) * 2;
-  const iw = W - pad.l - pad.r, ih = H - pad.t - pad.b;
-  const step = iw / days, bw = Math.max(3, Math.min(18, step - 4));
-  const y = (v) => pad.t + ih - (v / niceMax) * ih;
-  const ticks = [0, niceMax / 2, niceMax];
-  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("chart30"))}"><defs><linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#62A4FF"/><stop offset="1" stop-color="#1B5BD8"/></linearGradient></defs><g class="grid">`;
-  ticks.forEach((v) => { svg += `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y(v)}" y2="${y(v)}"/><text class="axis" x="${pad.l - 8}" y="${y(v) + 4}" text-anchor="end">${v}</text>`; });
-  svg += `</g>`;
-  buckets.forEach((b, i) => {
-    const x = pad.l + i * step + (step - bw) / 2;
-    if (b.n) {
-      const h = Math.max(4, ih * (b.n / niceMax)), top = pad.t + ih - h, r = Math.min(4, bw / 2);
-      svg += `<path class="bar" data-i="${i}" d="M${x},${pad.t + ih} V${top + r} Q${x},${top} ${x + r},${top} H${x + bw - r} Q${x + bw},${top} ${x + bw},${top + r} V${pad.t + ih} Z"/>`;
-    }
-    if ((i % 7 === 0 && i <= days - 5) || i === days - 1) svg += `<text class="axis" x="${pad.l + i * step + step / 2}" y="${H - 6}" text-anchor="middle">${esc(fmtDate(b.d, false))}</text>`;
-    svg += `<rect class="hit" data-i="${i}" x="${pad.l + i * step}" y="${pad.t}" width="${step}" height="${ih}"/>`;
-  });
-  svg += `<line x1="${pad.l}" x2="${W - pad.r}" y1="${pad.t + ih}" y2="${pad.t + ih}" stroke="rgba(130,165,255,.25)"/></svg><div class="tip" id="tip"></div>`;
-  box.innerHTML = svg;
-  const tip = $("#tip", box);
-  $$(".hit", box).forEach((r) => {
-    const i = +r.dataset.i, b = buckets[i];
-    r.addEventListener("mouseenter", () => {
-      $$(".bar", box).forEach((p) => p.classList.toggle("hot", +p.dataset.i === i));
-      tip.innerHTML = `<b>${b.n}</b>${esc(fmtDate(b.d, false))}`;
-      tip.style.left = (pad.l + i * step + step / 2) + "px";
-      tip.style.top = (y(b.n) - 8) + "px";
-      tip.style.opacity = 1;
-    });
-    r.addEventListener("mouseleave", () => { tip.style.opacity = 0; $$(".bar", box).forEach((p) => p.classList.remove("hot")); });
-  });
-}
-let rz;
-window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => { if (state.view === "overview" && !$("#app").hidden) drawChart(); }, 150); });
-
-/* ------------------------------------------------------------------ drawer */
-document.addEventListener("click", (e) => {
-  const o = e.target.closest("[data-open]");
-  if (o && !e.target.closest(".drawer")) openDrawer(o.dataset.open);
-});
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Enter" && e.target.matches("tr[data-open]")) openDrawer(e.target.dataset.open);
-  if (e.key === "Escape" && state.openId && !$("#confirm").open) closeDrawer();
-});
-$("#scrim").addEventListener("click", closeDrawer);
-
-let lastFocus = null;
-function openDrawer(id, keepDraft) {
-  const o = state.orders.find((x) => x.id === id);
-  if (!o) return;
-  const draft = keepDraft && state.openId === id ? { status: $("#dr-status [aria-pressed=true]")?.dataset.s, price: $("#dr-price")?.value, notes: $("#dr-notes")?.value } : null;
-  if (!keepDraft) lastFocus = document.activeElement;
-  state.openId = id;
-  const d = digits(o.phone);
-  const hist = [{ to: "new", at: o.createdAt, created: true }, ...(o.history || [])].reverse();
-  const cur = draft?.status || o.status;
-  $("#drawer").innerHTML = `
-    <div class="dr-head">
-      <span class="avatar">${esc(initials(o.name))}</span>
-      <div class="grow"><h2 id="dr-name">${esc(o.name)}</h2><p class="sub">${esc(fmtDate(o.createdAt))} · ${esc(ago(o.createdAt))}</p></div>
-      <button class="icon-btn" type="button" id="dr-close" aria-label="${esc(t("close"))}">${IC.x}</button>
-    </div>
-    <div class="dr-body">
-      <div class="quick">
-        <a href="tel:+${d}">${IC.phone}${esc(t("call"))}</a>
-        <a href="https://t.me/+${d}" target="_blank" rel="noopener">${IC.tg}${esc(t("telegram"))}</a>
-        <a href="https://wa.me/${d}" target="_blank" rel="noopener">${IC.wa}${esc(t("whatsapp"))}</a>
-        <button type="button" id="dr-copy">${IC.copy}${esc(t("copy"))}</button>
-      </div>
-      <div>
-        <span class="label">${esc(t("status"))}</span>
-        <div class="seg" id="dr-status">${STATUSES.map((s) => `<button type="button" class="st-${s}" data-s="${s}" aria-pressed="${s === cur}">${esc(t("st." + s))}</button>`).join("")}</div>
-      </div>
-      <div>
-        <span class="label">${esc(t("details"))}</span>
-        <div class="facts">
-          <div class="fact"><small>${esc(t("colClient"))}</small><span class="num">${esc(o.phone)}</span></div>
-          <div class="fact"><small>${esc(t("fBiz"))}</small><span>${esc(bizLabel(o))}</span></div>
-          <div class="fact"><small>${esc(t("fBudget"))}</small><span>${esc(o.budget)}</span></div>
-          <div class="fact"><small>${esc(t("fLang"))}</small><span>${esc(o.language || "—")}</span></div>
-          <div class="fact"><small>${esc(t("fDate"))}</small><span>${esc(fmtDate(o.createdAt))}</span></div>
-          <div class="fact"><small>${esc(t("fId"))}</small><span class="num">${esc(o.id)}</span></div>
-        </div>
-      </div>
-      ${o.message && o.message !== "—" ? `<div><span class="label">${esc(t("message"))}</span><div class="msgbox">${esc(o.message)}</div></div>` : ""}
-      <div>
-        <label class="label" for="dr-price">${esc(t("price"))}</label>
-        <div class="money"><span>$</span><input class="input num" id="dr-price" type="number" inputmode="decimal" min="0" step="1" placeholder="${esc(t("pricePh"))}" value="${esc(draft ? draft.price : (o.price ?? ""))}"></div>
-      </div>
-      <div>
-        <label class="label" for="dr-notes">${esc(t("notes"))}</label>
-        <textarea class="textarea" id="dr-notes" rows="4" placeholder="${esc(t("notesPh"))}">${esc(draft ? draft.notes : (o.notes || ""))}</textarea>
-      </div>
-      <div>
-        <span class="label">${esc(t("history"))}</span>
-        <div class="timeline">${hist.map((h) => `<div>${pill(h.to)}${h.created ? `<span>${esc(t("created"))}</span>` : ""}<time>${esc(fmtDate(h.at))}</time></div>`).join("")}</div>
-      </div>
-    </div>
-    <div class="dr-foot">
-      <button class="btn btn-danger" type="button" id="dr-delete">${esc(t("delete"))}</button>
-      <span class="grow"></span>
-      <button class="btn btn-primary" type="button" id="dr-save">${IC.check}${esc(t("save"))}</button>
-    </div>`;
-  $("#drawer").classList.add("open");
-  $("#drawer").setAttribute("aria-hidden", "false");
-  $("#scrim").classList.add("open");
-  document.body.style.overflow = "hidden";
-  if (!keepDraft) setTimeout(() => $("#dr-close").focus(), 50);
-
-  $("#dr-close").addEventListener("click", closeDrawer);
-  $("#dr-copy").addEventListener("click", async () => { try { await navigator.clipboard.writeText(o.phone); toast(t("copied"), "check"); } catch {} });
-  $$("#dr-status button").forEach((b) => b.addEventListener("click", () => $$("#dr-status button").forEach((x) => x.setAttribute("aria-pressed", x === b))));
-  $("#dr-save").addEventListener("click", async () => {
-    const status = $("#dr-status [aria-pressed=true]").dataset.s;
-    const price = $("#dr-price").value.trim();
-    const ok = await patch(o.id, { status, price: price === "" ? null : Number(price), notes: $("#dr-notes").value });
-    if (ok) { toast(t("saved"), "check"); closeDrawer(); }
-  });
-  $("#dr-delete").addEventListener("click", async () => {
-    if (!(await confirmDelete())) return;
-    try {
-      await api("/api/order?id=" + encodeURIComponent(o.id), { method: "DELETE" });
-      state.orders = state.orders.filter((x) => x.id !== o.id);
-      closeDrawer(); renderNav(); render(); toast(t("deleted"), "check");
-    } catch (e) { if (e.message !== "unauthorized") toast(t("saveErr"), "warn", true); }
-  });
-
-  if (!o.seen) {
-    o.seen = true;
-    api("/api/order?id=" + encodeURIComponent(o.id), { method: "PATCH", body: { seen: true } }).catch(() => {});
-    render();
-  }
-}
-
-function closeDrawer() {
-  if (!state.openId) return;
-  state.openId = null;
-  $("#drawer").classList.remove("open");
-  $("#drawer").setAttribute("aria-hidden", "true");
-  $("#scrim").classList.remove("open");
-  document.body.style.overflow = "";
-  if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
-}
-
-// focus trap inside drawer
-$("#drawer").addEventListener("keydown", (e) => {
-  if (e.key !== "Tab") return;
-  const f = $$("#drawer a,#drawer button,#drawer input,#drawer textarea").filter((x) => !x.disabled);
-  if (!f.length) return;
-  if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
-  else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
-});
-
-function confirmDelete() {
-  const d = $("#confirm");
-  return new Promise((resolve) => {
-    const onClick = (e) => { const b = e.target.closest("button[value]"); if (!b) return; d.close(); cleanup(); resolve(b.value === "yes"); };
-    const onCancel = () => { cleanup(); resolve(false); };
-    const cleanup = () => { d.removeEventListener("click", onClick); d.removeEventListener("cancel", onCancel); };
-    d.addEventListener("click", onClick);
-    d.addEventListener("cancel", onCancel);
-    d.showModal();
-  });
-}
-
-async function patch(id, body) {
-  try {
-    const { order } = await api("/api/order?id=" + encodeURIComponent(id), { method: "PATCH", body });
-    const i = state.orders.findIndex((x) => x.id === id);
-    if (i >= 0) state.orders[i] = order;
-    renderNav(); render();
-    return true;
-  } catch (e) {
-    if (e.message !== "unauthorized") toast(t("saveErr"), "warn", true);
-    return false;
-  }
-}
-
-/* ------------------------------------------------------------------ toast */
-function toast(msg, icon = "check", err) {
-  const el = document.createElement("div");
-  el.className = "toast" + (err ? " err" : "");
-  el.innerHTML = (IC[icon] || IC.check) + `<span>${esc(msg)}</span>`;
-  $("#toasts").appendChild(el);
-  setTimeout(() => { el.style.transition = "opacity .3s"; el.style.opacity = 0; setTimeout(() => el.remove(), 300); }, 3800);
-}
-
-/* ------------------------------------------------------------------ CSV export */
-$("#export").addEventListener("click", () => {
-  const rows = [["ID", "Date", "Name", "Phone", "Business", "Budget", "Status", "Agreed price (USD)", "Message", "Notes", "Language"]];
-  filtered().forEach((o) => rows.push([o.id, new Date(o.createdAt).toISOString().replace("T", " ").slice(0, 16), o.name, o.phone, bizLabel(o), o.budget, t("st." + o.status), o.price ?? "", o.message, o.notes || "", o.language || ""]));
-  const csv = "﻿" + rows.map((r) => r.map((c) => {
-    let s = String(c ?? "");
-    if (/^[=+\-@]/.test(s)) s = "'" + s; // stop spreadsheet formula injection
-    return '"' + s.replace(/"/g, '""') + '"';
-  }).join(",")).join("\r\n");
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
-  a.download = "webcreators-orders-" + new Date().toISOString().slice(0, 10) + ".csv";
-  a.click();
-  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-});
-
-boot();
-})();
-</script>
+<script src="qrcode.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
