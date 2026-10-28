@@ -75,6 +75,10 @@ function watch(page, tag) {
   await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
   const page = await ctx.newPage();
   const issues = watch(page, "admin");
+  // the panel must work both at /admin and /admin/ (relative script paths once broke /admin)
+  await page.goto(BASE + "/admin", { waitUntil: "load" });
+  await page.waitForSelector("#login:not([hidden])", { timeout: 8000 });
+  ok(await page.locator("#login .gate-logo").evaluate((i) => i.complete && i.naturalWidth > 0), "admin loads at /admin (no trailing slash) with logo and script");
   await page.goto(BASE + "/admin/", { waitUntil: "load" });
   await page.waitForSelector("#login:not([hidden])");
   await page.fill("#pw", "wrong password");
